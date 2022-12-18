@@ -5,37 +5,12 @@
 	
 	<link href="/feed/feed.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-12-15T08:00:00+08:00</updated>
+	<updated>2022-12-18T21:07:11.760+08:00</updated>
 	<id></id>
 	<author>
 		<name>Farma Huang</name>
 		<email></email>
 	</author>
-	
-	<entry>
-		<title></title>
-		<link href="/posts/dist/"/>
-		<updated>2022-12-09T10:43:54.220+08:00</updated>
-		<id>/posts/dist/</id>
-		<content type="html">
-		  &lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Wodle&lt;/title&gt;
-    &lt;script type=&quot;module&quot; crossorigin=&quot;&quot; src=&quot;/post/dist/assets/index.91e3a6f3.js&quot;&gt;&lt;/script&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;/post/dist/assets/index.0f97b84a.css&quot;&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
-    
-  &lt;/body&gt;
-&lt;/html&gt;
-
-			
-		</content>
-	</entry>
 	
 	<entry>
 		<title>First post.</title>
@@ -48,6 +23,31 @@
 對我來說優點是可以使用 markdown，&lt;br&gt;
 只要把產出的網頁推上 Github page 即可。&lt;/p&gt;
 &lt;p&gt;樣式與排版之後繼續研究。&lt;/p&gt;
+
+			
+		</content>
+	</entry>
+	
+	<entry>
+		<title></title>
+		<link href="/posts/dist/"/>
+		<updated>2022-12-18T21:07:11.760+08:00</updated>
+		<id>/posts/dist/</id>
+		<content type="html">
+		  &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Wodle&lt;/title&gt;
+    &lt;script type=&quot;module&quot; crossorigin=&quot;&quot; src=&quot;/posts/dist/assets/index.91e3a6f3.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/posts/dist/assets/index.0f97b84a.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;
 
 			
 		</content>

@@ -9,22 +9,11 @@
     
   
   
-  <url>
-    <loc>/posts/dist/</loc>
-    <lastmod>2022-12-09T02:43:54.220Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
     
-  
   
   <url>
     <loc>/posts/firstpost/</loc>
-    <lastmod>2022-12-15T00:00:00.000Z</lastmod>
+    <lastmod>2022-12-18T12:42:38.000Z</lastmod>
   </url>
   
   
@@ -35,9 +24,11 @@
     
   
   
+    
+  
   <url>
     <loc>/about/</loc>
-    <lastmod>2022-12-15T04:19:41.489Z</lastmod>
+    <lastmod>2022-12-18T12:42:38.000Z</lastmod>
   </url>
   
   
@@ -87,8 +78,23 @@
     
   
   
+    
+  
   <url>
     <loc>/</loc>
-    <lastmod>2022-12-15T05:21:49.108Z</lastmod>
+    <lastmod>2022-12-18T12:42:38.000Z</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <url>
+    <loc>/posts/dist/</loc>
+    <lastmod>2022-12-18T13:07:11.760Z</lastmod>
   </url>
 </urlset>
