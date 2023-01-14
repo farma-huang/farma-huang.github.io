@@ -1,0 +1,17 @@
+---
+title: Farma's blog.
+layout: layouts/home.njk
+description: I am Farma, an experienced frontend engineer with experience in several projects. Good communication skills with the team, able to build project architecture from scratch and work with the team. Continuously learning frontend technologies.
+image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
+date: Last Modified
+---
+
+<p>
+  Farma's blog
+</p>
+
+<div id="posts">
+  <h2>Posts</h2>
+  {% set postslist = collections.posts %}
+  {% include "postslist.njk" %}
+</div>

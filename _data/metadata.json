@@ -1,0 +1,26 @@
+{
+  "title": "Farma's blog",
+  "url": "",
+  "domain": "",
+  "description": "技術歷程隨筆",
+  "genre": "",
+  "googleAnalyticsId": "GA ID. Update me. Note, that this is not compatible with the not-yet-commonly used version 4 of Google Analytics",
+  "sendWebVitals": false,
+  "feed": {
+    "subtitle": "走過的技術隨筆",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": ""
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": ""
+  },
+  "author": {
+    "name": "Farma Huang",
+    "twitterHandle": ""
+  },
+  "publisher": {
+    "name": "Farma Huang"
+  }
+}
