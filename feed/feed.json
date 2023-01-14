@@ -1,0 +1,37 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Farma&#39;s blog",
+  "home_page_url": "",
+  "feed_url": "",
+  "description": "技術歷程隨筆",
+  "author": {
+    "name": "Farma Huang",
+    "url": ""
+  },
+  "items": [{
+      "id": "/posts/dist/",
+      "url": "/posts/dist/",
+      "title": "",
+      "content_html": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Wodle</title>\n    <script type=\"module\" crossorigin src=\"/posts/dist/assets/index.91e3a6f3.js\"></script>\n    <link rel=\"stylesheet\" href=\"/posts/dist/assets/index.0f97b84a.css\">\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    \n  </body>\n</html>\n",
+      "date_published": "2023-01-14T06:00:59.380-00:00"
+    },{
+      "id": "/posts/third/",
+      "url": "/posts/third/",
+      "title": "third post.",
+      "content_html": "<p>這是 third post github action 測試</p>\n",
+      "date_published": "2023-01-02T00:00:00-00:00"
+    },{
+      "id": "/posts/secondpost/",
+      "url": "/posts/secondpost/",
+      "title": "Second post.",
+      "content_html": "<p>這是 second post github action 測試</p>\n",
+      "date_published": "2023-01-01T00:00:00-00:00"
+    },{
+      "id": "/posts/firstpost/",
+      "url": "/posts/firstpost/",
+      "title": "First post.",
+      "content_html": "<p>這是一篇部落格首post，<br>\n使用 <code>eleventy</code> + <code>eleventy-high-performance-blog</code> 的組合，<br>\n對我來說優點是可以使用 markdown，<br>\n只要把產出的網頁推上 Github page 即可。</p>\n<p>樣式與排版之後繼續研究。</p>\n",
+      "date_published": "2022-12-15T00:00:00-00:00"
+    }
+  ]
+}
