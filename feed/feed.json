@@ -13,7 +13,7 @@
       "url": "/posts/dist/",
       "title": "",
       "content_html": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Wodle</title>\n    <script type=\"module\" crossorigin src=\"/posts/dist/assets/index.91e3a6f3.js\"></script>\n    <link rel=\"stylesheet\" href=\"/posts/dist/assets/index.0f97b84a.css\">\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    \n  </body>\n</html>\n",
-      "date_published": "2023-01-14T06:00:59.380-00:00"
+      "date_published": "2023-01-14T06:11:24.537-00:00"
     },{
       "id": "/posts/third/",
       "url": "/posts/third/",
