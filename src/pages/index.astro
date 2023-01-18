@@ -1,0 +1,19 @@
+---
+// Main layout
+import Main from '../layouts/main.astro';
+// import Post from '../layouts/post.astro';
+// Component Imports
+import Button from '../components/Button.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+// Global CSS
+import '../styles/global.css';
+
+const title = 'Farma';
+---
+
+<Main content={{ title }}>
+	<Header />
+	<!-- <Post /> -->
+	<Footer />
+</Main>

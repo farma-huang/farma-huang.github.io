@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Farma",
+  country: "Taiwan",
+  occupation: "Frontend Developer",
+  hobbies: ["programming", "exercise", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "NodeJS"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+const liFontSize = "22px";
+const h1TwBgColor = "bg-blue-100";
+---
+<style define:vars={{ skillColor, liFontSize }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: bold;
+    font-size: var(--liFontSize);
+    color: blue;
+  }
+  li {
+    font-size: var(--liFontSize);
+  }
+</style>
+
+<h1 class={`${h1TwBgColor} text-center text-base`}>My Astro Site</h1>
+
+<a href="/">Home</a>
+<a href="/about/">About</a>
+<a href="/blog/">Blog</a>
+
+<h1>{pageTitle}</h1>
+<ul>
+  <li class="bg-red-100">My name is {identity.firstName}.</li>
+  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+  {identity.hobbies.length >= 2 && 
+    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+  } 
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li class="skill text-red-500">{skill}</li>)}
+</ul>
+{happy && <p>I am happy to be learning Astro!</p>}
+
+{finished && <p>I finished this tutorial!</p>}
+
+{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
