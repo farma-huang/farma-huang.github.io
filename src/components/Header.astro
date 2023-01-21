@@ -1,15 +1,24 @@
 ---
+import clsx from 'clsx';
 ---
-<nav class="">
+<nav class={clsx(
+  'border-b border-slate',
+  'flex justify-between',
+  'md:px-10 py-2'
+)}>
   <a href="/">Farma</a>
-  <div>
+  <div class={clsx('flex gap-2')}>
     <a href="/archives">文章清單</a>
     <a href="/tags">分類</a>
     <a href="/about/">關於我</a>
   </div>
 </nav>
 
-<style>
+<!-- <script>
+  import clsx from 'clsx';
+</script> -->
+
+<!-- <style>
   nav {
     padding: 10px 10%;
     display: flex;
@@ -21,4 +30,4 @@
       padding: 10px 20px;
     }
   }
-</style>
+</style> -->

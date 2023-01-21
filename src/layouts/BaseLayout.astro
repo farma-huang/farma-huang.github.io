@@ -1,8 +1,11 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import clsx from 'clsx';
+
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
 // const { content } = Astro.props;
-import '../styles/global.css';
+import '@styles/global.css';
+// import '@styles/bulma/bulma.min.css';
 ---
 
 <html lang="en">
@@ -16,7 +19,9 @@ import '../styles/global.css';
 	</head>
 	<body>
 		<Header />
+		<div class={clsx('py-12 px-6')}>
 			<slot />
+		</div>
 		<Footer />
 	</body>
 </html>
