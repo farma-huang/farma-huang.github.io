@@ -3,31 +3,21 @@ import clsx from 'clsx';
 ---
 <nav class={clsx(
   'border-b border-slate',
-  'flex justify-between',
-  'md:px-10 py-2'
+  'py-2 px-6'
 )}>
-  <a href="/">Farma</a>
-  <div class={clsx('flex gap-2')}>
+<!-- class={clsx('container',
+'mx-auto',
+'lg:max-w-4xl md:max-w-2xl'
+)}> -->
+  <div class={clsx('header',
+    'flex justify-between',
+    'mx-auto',
+    'lg:max-w-3xl md:max-w-2xl')}>
+    <a href="/" class="text-xl">Farma</a>
+  </div>
+  <!-- <div class={clsx('flex gap-2')}>
     <a href="/archives">文章清單</a>
     <a href="/tags">分類</a>
     <a href="/about/">關於我</a>
-  </div>
+  </div> -->
 </nav>
-
-<!-- <script>
-  import clsx from 'clsx';
-</script> -->
-
-<!-- <style>
-  nav {
-    padding: 10px 10%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  @media screen and (width < 800px) {
-    nav {
-      padding: 10px 20px;
-    }
-  }
-</style> -->
