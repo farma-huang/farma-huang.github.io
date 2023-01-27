@@ -1,11 +1,16 @@
 ---
+import clsx from 'clsx';
+
 import BaseLayout from '@layouts/BaseLayout.astro';
 
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout>
-  <article class="prose lg:prose-xl px-auto">
+  <article class={
+    clsx('prose lg:prose-xl',
+    'mx-auto')
+  }>
     <slot />
   </article>
 </BaseLayout>
