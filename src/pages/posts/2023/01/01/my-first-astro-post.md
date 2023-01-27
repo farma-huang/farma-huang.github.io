@@ -1,7 +1,7 @@
 ---
 layout: '@layouts/PostLayout.astro'
 title: 'My First Astro Post'
-pubDate: 2023-01-01
+pubDate: '2023-01-01'
 description: 'This is the first post of my new Astro blog.'
 author: 'Farma'
 image:
@@ -17,10 +17,10 @@ VS code 中已整合好，快速打出 html。若沒有啟用的話，參照連�
 - `Ctrl + E`  Mark as code
 - CSS 畫三角形的方法，
 
-| 左对齐 | 右对齐 | 居中对齐 |
+| 左對齊 | 右對齊 | 居中對齊 |
 | :-----| ----: | :----: |
-| 单元格 | 单元格 | 单元格 |
-| 单元格 | 单元格 | 单元格 |
+| 單元格 | 單元格 | 單元格 |
+| 單元格 | 單元格 | 單元格 |
 
 ```css
 div {
