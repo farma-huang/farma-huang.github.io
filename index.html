@@ -7,39 +7,113 @@
 		<!-- <meta name="description" content="Farma's blog" /> -->
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico">
 		<!-- <title>{content.title}</title> -->
-	<link rel="stylesheet" href="/assets/about.1bd669be.css" />
-<link rel="stylesheet" href="/assets/apost.cf982d53.css" /></head>
+	<link rel="stylesheet" href="/assets/about.15c4ce4c.css" /></head>
 	<body>
-		<nav class="border-b border-slate flex justify-between md:px-10 py-2">
-  <a href="/">Farma</a>
-  <div class="flex gap-2">
+		<nav class="border-b border-slate py-2 px-6">
+<!-- class={clsx('container',
+'mx-auto',
+'lg:max-w-4xl md:max-w-2xl'
+)}> -->
+  <div class="header flex justify-between mx-auto lg:max-w-3xl md:max-w-2xl">
+    <a href="/" class="text-xl">Farma</a>
+  </div>
+  <!-- <div class={clsx('flex gap-2')}>
     <a href="/archives">文章清單</a>
     <a href="/tags">分類</a>
     <a href="/about/">關於我</a>
-  </div>
+  </div> -->
 </nav>
-
-<!-- <script>
-  import clsx from 'clsx';
-</script> -->
-
-<!-- <style>
-  nav {
-    padding: 10px 10%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  @media screen and (width < 800px) {
-    nav {
-      padding: 10px 20px;
-    }
-  }
-</style> -->
 		<div class="py-12 px-6">
-			
+			<div class="container mx-auto lg:max-w-4xl md:max-w-2xl">
+  <div>
+        
+        <div class="post-item">
+          <h1>
+            <a href="/posts/2022/12/31/markdown-page">MDX Markdown + Tailwind</a>
+          </h1>
+          <div class="post-meta">
+            <span class="post-item-date">2023-01-02</span>
+          </div>
+          <p class="post-excerpt">
+            ```
+import Button from &#39;@components/Button.astro&#39;;
+
+&lt;div class=&quot;grid place-items-center content-center&quot;&gt;
+	&lt;Button&gt;Tailwind Button in Markdown!&lt;/Button&gt;
+	&lt;a href=&quot;/&quot; class=&quot;p-4 underline&quot;&gt;
+		Go home...
+	&lt;/a&gt;
+&lt;/div&gt;
+```…
+
+          </p>
+        </div>
+      </div><div>
+        <hr class="my-12 mx-auto">
+        <div class="post-item">
+          <h1>
+            <a href="/posts/2023/01/01/my-first-astro-post">My First Astro Post</a>
+          </h1>
+          <div class="post-meta">
+            <span class="post-item-date">2023-01-01</span>
+          </div>
+          <p class="post-excerpt">
+            # My First Blog Post
+
+- Emmet
+VS code 中已整合好，快速打出 html。若沒有啟用的話，參照連結將``emmet.triggerExpansionOnTab``設定啟用 
+`!` 基本 html 文件
+- `Ctrl + E`  Mark as code
+-…
+
+          </p>
+        </div>
+      </div><div>
+        <hr class="my-12 mx-auto">
+        <div class="post-item">
+          <h1>
+            <a href="/posts/2022/12/30/apost">My First Blog Post</a>
+          </h1>
+          <div class="post-meta">
+            <span class="post-item-date">2022-07-01</span>
+          </div>
+          <p class="post-excerpt">
+            # My First Blog Post
+
+### test…
+
+          </p>
+        </div>
+      </div><div>
+        <hr class="my-12 mx-auto">
+        <div class="post-item">
+          <h1>
+            <a href="/posts/2022/01/01/2022-01-01">2022-01-01</a>
+          </h1>
+          <div class="post-meta">
+            <span class="post-item-date">2022-01-01</span>
+          </div>
+          <p class="post-excerpt">
+            # 2022-01-01
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi necessitatibus harum temporibus eveniet ducimus nulla asperiores soluta ea nostrum…
+
+          </p>
+        </div>
+      </div>
+</div>
+<!-- 
+  <p>{post.frontmatter.description}</p>
+  <div class="post-item-footer">
+    <span class="post-item-date">-- {post.frontmatter.pubDate.slice(0, 10)}</span>
+  </div>
+  {
+  allPosts.map((post) => {
+    return <li><a href={post.url}>{post.frontmatter.title}</a></li>;
+  })
+} -->
 		</div>
 		<footer class="text-center py-12">
-  © 2023 Farma Powered by <a href="https://astro.build/">Astro</a>
+  © 2023 Farma. Powered by <a class="underline" href="https://astro.build/">Astro</a>
 </footer>
 	</body></html>
