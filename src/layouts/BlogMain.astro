@@ -1,0 +1,42 @@
+---
+import clsx from 'clsx';
+import PostExcerpt from '@igor.dvlpr/astro-post-excerpt';
+
+let allPosts = await Astro.glob('../pages/posts/**/*.md*');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime());
+---
+<div
+  class={clsx('container',
+  'mx-auto',
+  'lg:max-w-4xl md:max-w-2xl'
+  )}>
+  {allPosts.map((post, index) => {
+    // const href = `/blog/${post.file.split('/').pop().split('.').shift()}`;
+    return (
+      <div>
+        { index !== 0 && <hr class="my-12 mx-auto" /> }
+        <div class="post-item">
+          <h1>
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </h1>
+          <div class="post-meta">
+            <span class="post-item-date">{post.frontmatter.pubDate.slice(0, 10)}</span>
+          </div>
+          <p class="post-excerpt">
+            <PostExcerpt post={post} words={20} addEllipsis={true} />
+          </p>
+        </div>
+      </div>
+    )
+  })}
+</div>
+<!-- 
+  <p>{post.frontmatter.description}</p>
+  <div class="post-item-footer">
+    <span class="post-item-date">-- {post.frontmatter.pubDate.slice(0, 10)}</span>
+  </div>
+  {
+  allPosts.map((post) => {
+    return <li><a href={post.url}>{post.frontmatter.title}</a></li>;
+  })
+} -->
