@@ -9,20 +9,26 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '20.x'
+          cache: 'pnpm'
 
-      - run: npm ci
+      - run: pnpm install --frozen-lockfile
 
-      - run: npm run build
+      - run: pnpm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./dist
-          cname: farma.tw
+          cname: farma.website
