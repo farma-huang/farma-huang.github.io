@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 const pageTitle = "About Me";
 
@@ -20,6 +20,7 @@ const skillColor = "navy";
 const liFontSize = "22px";
 const h1TwBgColor = "bg-blue-100";
 ---
+
 <style define:vars={{ skillColor, liFontSize }}>
   h1 {
     color: purple;
@@ -46,9 +47,13 @@ const h1TwBgColor = "bg-blue-100";
 <ul>
   <li class="bg-red-100">My name is {identity.firstName}.</li>
   <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-  {identity.hobbies.length >= 2 && 
-    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-  } 
+  {
+    identity.hobbies.length >= 2 && (
+      <li>
+        Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+      </li>
+    )
+  }
 </ul>
 <p>My skills are:</p>
 <ul>
@@ -58,4 +63,10 @@ const h1TwBgColor = "bg-blue-100";
 
 {finished && <p>I finished this tutorial!</p>}
 
-{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+{
+  goal === 3 ? (
+    <p>My goal is to finish in 3 days.</p>
+  ) : (
+    <p>My goal is not 3 days.</p>
+  )
+}
