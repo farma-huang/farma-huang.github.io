@@ -1,72 +1,62 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { MapPin, Building2, Mail, Github } from "lucide-react";
 
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Farma",
-  country: "Taiwan",
-  occupation: "Frontend Developer",
-  hobbies: ["programming", "exercise", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "NodeJS"];
-
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "navy";
-const liFontSize = "22px";
-const h1TwBgColor = "bg-blue-100";
+const pageTitle = "關於我 - Farma";
 ---
 
-<style define:vars={{ skillColor, liFontSize }}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
-  .skill {
-    color: var(--skillColor);
-    font-weight: bold;
-    font-size: var(--liFontSize);
-    color: blue;
-  }
-  li {
-    font-size: var(--liFontSize);
-  }
-</style>
+<BaseLayout pageTitle={pageTitle}>
+  <div
+    class="bg-white rounded-3xl p-8 md:p-12 md:flex gap-12 items-start shadow-sm border border-zinc-100"
+  >
+    <!-- Left: Image -->
+    <div
+      class="md:w-1/3 flex flex-col items-center text-center md:items-start md:text-left mb-8 md:mb-0 shrink-0"
+    >
+      <div
+        class="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-xl mb-6"
+      >
+        <img
+          src="/assets/images/avatar_2.png"
+          alt="Farma Huang"
+          class="w-full h-full object-cover"
+        />
+      </div>
 
-<h1 class={`${h1TwBgColor} text-center text-base`}>My Astro Site</h1>
+      <h1 class="text-2xl font-bold text-black mb-1">
+        黃信發 <span class="text-zinc-600 text-lg font-normal ml-2">Farma</span>
+      </h1>
+      <p class="text-zinc-700 text-sm mb-6">開發者 / 前端架構師</p>
 
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+      <div class="space-y-2 text-sm font-medium text-zinc-800">
+        <div class="flex items-center gap-2">
+          <MapPin className="w-4 h-4 text-zinc-700" /> 台北, 台灣
+        </div>
+        <div class="flex items-center gap-2">
+          <Building2 className="w-4 h-4 text-zinc-700" /> 奔騰網路科技
+        </div>
+        <div class="flex items-center gap-2">
+          <Mail className="w-4 h-4 text-zinc-700" /> farmahuang@gmail.com
+        </div>
+        <a
+          href="https://github.com/farma-huang"
+          target="_blank"
+          class="flex items-center gap-2 hover:text-black transition-colors"
+        >
+          <Github className="w-4 h-4 text-zinc-700" /> farma-huang
+        </a>
+      </div>
+    </div>
 
-<h1>{pageTitle}</h1>
-<ul>
-  <li class="bg-red-100">My name is {identity.firstName}.</li>
-  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-  {
-    identity.hobbies.length >= 2 && (
-      <li>
-        Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-      </li>
-    )
-  }
-</ul>
-<p>My skills are:</p>
-<ul>
-  {skills.map((skill) => <li class="skill text-red-500">{skill}</li>)}
-</ul>
-{happy && <p>I am happy to be learning Astro!</p>}
+    <!-- Right: Bio -->
+    <div class="md:w-2/3 prose prose-zinc prose-lg">
+      <h2 class="text-3xl font-bold text-zinc-900 mb-6 font-display">
+        「哈囉，世界！」
+      </h2>
 
-{finished && <p>I finished this tutorial!</p>}
-
-{
-  goal === 3 ? (
-    <p>My goal is to finish in 3 days.</p>
-  ) : (
-    <p>My goal is not 3 days.</p>
-  )
-}
+      <p class="text-zinc-800 leading-relaxed font-medium">
+        你好，這裡純粹是紀錄個人的學習心得。
+      </p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,8 +1,7 @@
 {
   "name": "farma-huang.github.io",
   "type": "module",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "dev": "astro dev",
@@ -22,6 +21,7 @@
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "framer-motion": "^12.33.0",
+    "lucide-react": "^0.563.0",
     "postcss": "^8.4.49",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -29,7 +29,6 @@
     "tailwindcss": "^4.1.0"
   },
   "devDependencies": {
-    "@igor.dvlpr/astro-post-excerpt": "^1.1.1",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.18"
   }

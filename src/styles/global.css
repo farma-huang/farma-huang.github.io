@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Microsoft JhengHei UI Light", "Microsoft JhengHei", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html {
+    font-family: "Microsoft JhengHei UI Light", "Microsoft JhengHei", sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  body {
+    @apply bg-zinc-50 text-zinc-900 antialiased;
+  }
+}

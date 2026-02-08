@@ -1,11 +1,178 @@
 ---
-import clsx from "clsx";
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
 
-import BaseLayout from "@layouts/BaseLayout.astro";
+// Get all posts and sort by date
+const posts = Object.values(
+  import.meta.glob("../pages/posts/**/*.md", { eager: true }),
+).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf(),
+);
+
+const currentIndex = posts.findIndex(
+  (post: any) => post.frontmatter.title === frontmatter.title,
+);
+
+const nextPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
+const prevPost =
+  currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
 ---
 
-<BaseLayout>
-  <article class={clsx("prose lg:prose-2xl md:prose-xl", "mx-auto")}>
-    <slot />
-  </article>
+<BaseLayout pageTitle={frontmatter.title}>
+  <div class="max-w-3xl mx-auto pt-8 relative px-4">
+    {
+      frontmatter.image && (
+        <div class="mb-8 rounded-2xl overflow-hidden shadow-sm border border-zinc-100">
+          <img
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt || frontmatter.title}
+            class="w-full h-auto object-cover aspect-video"
+          />
+        </div>
+      )
+    }
+
+    <nav
+      class="flex items-center gap-2 text-sm text-zinc-500 mb-8 overflow-hidden"
+    >
+      <a
+        href="/"
+        class="hover:text-rose-500 transition-colors flex items-center gap-1 whitespace-nowrap"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-home"
+          ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+          ></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg
+        >
+        首頁
+      </a>
+      <span class="text-zinc-300">/</span>
+      <span class="text-zinc-400 truncate font-medium">{frontmatter.title}</span
+      >
+    </nav>
+
+    <!-- Main Content -->
+    <article class="prose prose-zinc prose-lg mx-auto">
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold text-zinc-900 mb-4 tracking-tight">
+          {frontmatter.title}
+        </h1>
+        <div class="flex items-center gap-4 text-zinc-500 text-sm font-mono">
+          <span>{frontmatter.pubDate?.slice(0, 10)}</span>
+          {frontmatter.author && <span>by {frontmatter.author}</span>}
+          {
+            frontmatter.tags && (
+              <div class="flex gap-2">
+                {frontmatter.tags.map((tag: string) => (
+                  <span class="px-2 py-0.5 bg-zinc-100 border border-zinc-200 rounded-md text-xs text-zinc-500">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            )
+          }
+        </div>
+      </header>
+
+      <div class="editorial-content">
+        <slot />
+      </div>
+
+      <hr class="my-12 border-zinc-200" />
+
+      <div class="flex justify-between items-center gap-4">
+        {
+          prevPost ? (
+            <a
+              href={(prevPost as any).url}
+              class="flex flex-col items-start gap-1 group no-underline"
+            >
+              <span class="text-xs font-mono text-zinc-400 group-hover:text-rose-500 transition-colors">
+                ← 上一篇
+              </span>
+              <span class="text-zinc-700 font-medium group-hover:text-zinc-900 transition-colors">
+                {(prevPost as any).frontmatter.title}
+              </span>
+            </a>
+          ) : (
+            <div />
+          )
+        }
+
+        {
+          nextPost ? (
+            <a
+              href={(nextPost as any).url}
+              class="flex flex-col items-end gap-1 group no-underline text-right"
+            >
+              <span class="text-xs font-mono text-zinc-400 group-hover:text-rose-500 transition-colors">
+                下一篇 →
+              </span>
+              <span class="text-zinc-700 font-medium group-hover:text-zinc-900 transition-colors">
+                {(nextPost as any).frontmatter.title}
+              </span>
+            </a>
+          ) : (
+            <div />
+          )
+        }
+      </div>
+    </article>
+  </div>
+
+  <script>
+    import { initCodeCopy } from "../scripts/code-copy";
+    // Run on load
+    initCodeCopy();
+    // Re-run on Astro view transitions if enabled (optional but good practice)
+    document.addEventListener("astro:page-load", initCodeCopy);
+  </script>
+
+  <style is:global>
+    /* Editorial Grid Custom Styles */
+    .prose blockquote {
+      background: #f4f4f5; /* zinc-100 */
+      border-left-color: #f43f5e; /* rose-500 */
+      color: #52525b; /* zinc-600 */
+      font-style: italic;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      quotes: none;
+    }
+    .prose blockquote p:first-of-type::before {
+      content: none;
+    }
+    .prose blockquote p:last-of-type::after {
+      content: none;
+    }
+
+    /* Code Blocks */
+    .prose pre {
+      /* background-color: #18181b !important; default pretty good */
+      border: 1px solid #e4e4e7; /* zinc-200 */
+      border-radius: 0.5rem;
+    }
+
+    /* Links */
+    .prose a {
+      color: #f43f5e; /* rose-500 */
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .prose a:hover {
+      border-bottom-color: #f43f5e;
+    }
+  </style>
 </BaseLayout>
