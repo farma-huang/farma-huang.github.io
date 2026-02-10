@@ -28,8 +28,8 @@ export default function NavBar() {
                         key={item.name}
                         href={item.href}
                         className={clsx(
-                            "text-lg leading-8 font-medium transition-colors hover:text-rose-500",
-                            activeTab === item.name ? "text-rose-500" : "text-zinc-500"
+                            "text-lg leading-8 font-medium transition-colors hover:text-zinc-700",
+                            activeTab === item.name ? "text-zinc-900" : "text-zinc-500"
                         )}
                     >
                         {item.name}

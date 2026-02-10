@@ -7,7 +7,7 @@ const { page } = Astro.props;
         page.url.prev ? (
             <a
                 href={page.url.prev}
-                class="px-4 py-2 border border-zinc-200 text-zinc-600 rounded-lg hover:border-rose-500 hover:text-rose-500 transition-colors shadow-sm"
+                class="px-4 py-2 border border-zinc-200 text-zinc-600 rounded-lg hover:border-zinc-700 hover:text-zinc-700 transition-colors shadow-sm"
                 style="background-color: var(--color-card-bg);"
             >
                 ← 上一頁
@@ -27,7 +27,7 @@ const { page } = Astro.props;
         page.url.next ? (
             <a
                 href={page.url.next}
-                class="px-4 py-2 border border-zinc-200 text-zinc-600 rounded-lg hover:border-rose-500 hover:text-rose-500 transition-colors shadow-sm"
+                class="px-4 py-2 border border-zinc-200 text-zinc-600 rounded-lg hover:border-zinc-700 hover:text-zinc-700 transition-colors shadow-sm"
                 style="background-color: var(--color-card-bg);"
             >
                 下一頁 →

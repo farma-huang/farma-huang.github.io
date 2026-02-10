@@ -58,7 +58,7 @@
   --darkreader-text--color-white: var(--darkreader-text-ffffff, #dcdad7);
   
   /* Custom Background Colors */
-  --color-page-bg: #d8d4cf;
+  --color-page-bg: rgb(215, 213, 209);
   --color-card-bg: rgb(220, 218, 215);
   
   /* Spacing */
@@ -121,7 +121,7 @@
   }
 
   body {
-    background-color: #d8d4cf;
+    background-color: rgb(215, 213, 209);
     color: var(--darkreader-text--color-gray-900);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -157,5 +157,11 @@
 
   pre > code {
     display: block;
+  }
+}
+
+@layer utilities {
+  .bg-card {
+    background-color: rgb(220, 218, 215);
   }
 }

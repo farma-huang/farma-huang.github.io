@@ -35,7 +35,7 @@ const heroImage =
                 tags
                     .slice(0, 2)
                     .map((tag: string) => (
-                        <span class="px-2 py-1 bg-white/90 backdrop-blur text-rose-500 text-xs font-bold rounded-md shadow-sm">
+                        <span class="px-2 py-1 bg-white/90 backdrop-blur text-zinc-600 text-xs font-bold rounded-md shadow-sm">
                             #{tag}
                         </span>
                     ))
@@ -48,7 +48,7 @@ const heroImage =
             {formatDate(post.frontmatter.pubDate)}
         </div>
         <h3
-            class="text-xl font-bold text-zinc-800 mb-3 group-hover:text-rose-500 transition-colors leading-tight"
+            class="text-xl font-bold text-zinc-800 mb-3 group-hover:text-zinc-900 transition-colors leading-tight"
         >
             {post.frontmatter.title}
         </h3>
@@ -59,7 +59,7 @@ const heroImage =
         </p>
 
         <div
-            class="text-rose-500 text-sm font-medium flex items-center group-hover:gap-2 transition-all"
+            class="text-zinc-600 text-sm font-medium flex items-center group-hover:gap-2 transition-all"
         >
             閱讀全文 <span>→</span>
         </div>
