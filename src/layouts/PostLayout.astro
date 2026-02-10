@@ -21,67 +21,59 @@ const prevPost =
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <div class="max-w-3xl mx-auto pt-8 relative px-4">
+  <div class="max-w-5xl mx-auto relative px-4">
     {
       frontmatter.image && (
-        <div class="mb-8 rounded-2xl overflow-hidden shadow-sm border border-zinc-100">
+        <div class="rounded-t-2xl overflow-hidden shadow-sm border border-zinc-200">
           <img
             src={frontmatter.image.url}
             alt={frontmatter.image.alt || frontmatter.title}
-            class="w-full h-auto object-cover aspect-video"
+            class="w-full h-64 object-cover aspect-video"
           />
         </div>
       )
     }
 
-    <nav
-      class="flex items-center gap-2 text-sm text-zinc-500 mb-8 overflow-hidden"
+    <article
+      class="prose prose-zinc prose-lg mx-auto bg-card border border-zinc-200 rounded-b-lg px-8 py-4 shadow-sm"
     >
-      <a
-        href="/"
-        class="hover:text-rose-500 transition-colors flex items-center gap-1 whitespace-nowrap"
+      <nav
+        class="flex items-center gap-2 text-sm text-zinc-500 mb-4 overflow-hidden"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-home"
-          ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-          ></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg
+        <a
+          href="/"
+          class="transition-colors flex items-center gap-1 whitespace-nowrap"
         >
-        首頁
-      </a>
-      <span class="text-zinc-300">/</span>
-      <span class="text-zinc-400 truncate font-medium">{frontmatter.title}</span
-      >
-    </nav>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-home"
+            ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            ></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg
+          >
+          首頁
+        </a>
+        <span class="text-zinc-400">/</span>
+        <span class="text-zinc-500 truncate font-medium"
+          >{frontmatter.title}</span
+        >
+      </nav>
 
-    <!-- Main Content -->
-    <article class="prose prose-zinc prose-lg mx-auto">
-      <header class="mb-10">
+      <!-- Main Content -->
+      <header class="mb-4">
         <h1 class="text-4xl font-bold text-zinc-900 mb-4 tracking-tight">
           {frontmatter.title}
         </h1>
         <div class="flex items-center gap-4 text-zinc-500 text-sm font-mono">
           <span>{frontmatter.pubDate?.slice(0, 10)}</span>
           {frontmatter.author && <span>by {frontmatter.author}</span>}
-          {
-            frontmatter.tags && (
-              <div class="flex gap-2">
-                {frontmatter.tags.map((tag: string) => (
-                  <span class="px-2 py-0.5 bg-zinc-100 border border-zinc-200 rounded-md text-xs text-zinc-500">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            )
-          }
         </div>
       </header>
 

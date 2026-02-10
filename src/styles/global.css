@@ -1,18 +1,161 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Microsoft JhengHei UI Light", "Microsoft JhengHei", "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* DarkReader Color Variables */
+  --darkreader-bg--color-red-50: var(--darkreader-background-fef2f2, #f9b0b0);
+  --darkreader-bg--color-red-100: var(--darkreader-background-ffe2e2, #ff9e9e);
+  --darkreader-bg--color-red-200: var(--darkreader-background-ffc9c9, #ff8b8b);
+  --darkreader-border--color-red-200: var(--darkreader-border-ffc9c9, #ff8b8b);
+  --darkreader-text--color-red-500: var(--darkreader-text-fb2c36, #fb1722);
+  --darkreader-text--color-red-600: var(--darkreader-text-e7000b, #e1000b);
+  --darkreader-text--color-red-700: var(--darkreader-text-c10007, #c40007);
+  --darkreader-text--color-red-800: var(--darkreader-text-9f0712, #a90713);
+  
+  --darkreader-bg--color-green-50: var(--darkreader-background-f0fdf4, #b2f5c6);
+  --darkreader-bg--color-green-100: var(--darkreader-background-dbfce7, #9ff7bf);
+  --darkreader-bg--color-green-200: var(--darkreader-background-b9f8cf, #86f3ac);
+  --darkreader-text--color-green-600: var(--darkreader-text-00a63e, #00b042);
+  --darkreader-text--color-green-700: var(--darkreader-text-008236, #00953e);
+  --darkreader-text--color-green-800: var(--darkreader-text-016630, #017f3c);
+  
+  --darkreader-bg--color-blue-50: var(--darkreader-background-eff6ff, #d6d4d1);
+  --darkreader-bg--color-blue-100: var(--darkreader-background-dbeafe, #cfccc8);
+  --darkreader-border--color-blue-200: var(--darkreader-border-bedbff, #c5c2bd);
+  --darkreader-border--color-blue-300: var(--darkreader-border-8ec5ff, #5fadff);
+  --darkreader-bg--color-blue-400: var(--darkreader-background-50a2ff, #3091ff);
+  --darkreader-bg--color-blue-500: var(--darkreader-background-2b7fff, #1471ff);
+  --darkreader-text--color-blue-500: var(--darkreader-text-2b7fff, #1471ff);
+  --darkreader-bg--color-blue-600: var(--darkreader-background-155dfc, #0552fc);
+  --darkreader-text--color-blue-600: var(--darkreader-text-155dfc, #0552fc);
+  --darkreader-border--color-blue-600: var(--darkreader-border-155dfc, #0552fc);
+  --darkreader-bg--color-blue-700: var(--darkreader-background-1447e6, #1344dc);
+  --darkreader-text--color-blue-700: var(--darkreader-text-1447e6, #1344dc);
+  --darkreader-text--color-blue-800: var(--darkreader-text-193cb8, #193cb7);
+  
+  --darkreader-bg--color-purple-100: var(--darkreader-background-f3e8ff, #d4d1ce);
+  --darkreader-text--color-purple-800: var(--darkreader-text-6e11b0, #7011b3);
+  
+  --darkreader-bg--color-gray-50: var(--darkreader-background-f9fafb, #d8d6d3);
+  --darkreader-bg--color-gray-100: var(--darkreader-background-f3f4f6, #d5d2cf);
+  --darkreader-border--color-gray-100: var(--darkreader-border-f3f4f6, #d5d2cf);
+  --darkreader-bg--color-gray-200: var(--darkreader-background-e5e7eb, #ccc9c5);
+  --darkreader-border--color-gray-200: var(--darkreader-border-e5e7eb, #ccc9c5);
+  --darkreader-text--color-gray-300: var(--darkreader-text-d1d5dc, #c0bcb6);
+  --darkreader-border--color-gray-300: var(--darkreader-border-d1d5dc, #c0bcb6);
+  --darkreader-text--color-gray-400: var(--darkreader-text-99a1af, #9c968e);
+  --darkreader-text--color-gray-500: var(--darkreader-text-6a7282, #6c7579);
+  --darkreader-text--color-gray-600: var(--darkreader-text-4a5565, #4d5969);
+  --darkreader-text--color-gray-700: var(--darkreader-text-364153, #3d495d);
+  --darkreader-bg--color-gray-800: var(--darkreader-background-1e2939, #373b3e);
+  --darkreader-text--color-gray-800: var(--darkreader-text-1e2939, #373b3e);
+  --darkreader-text--color-gray-900: var(--darkreader-text-101828, #2c2f31);
+  
+  --darkreader-bg--color-black: var(--darkreader-background-000000, #181a1b);
+  --darkreader-bg--color-white: var(--darkreader-background-ffffff, #dcdad7);
+  --darkreader-text--color-white: var(--darkreader-text-ffffff, #dcdad7);
+  
+  /* Custom Background Colors */
+  --color-page-bg: #d8d4cf;
+  --color-card-bg: rgb(220, 218, 215);
+  
+  /* Spacing */
+  --spacing: .25rem;
+  
+  /* Container Sizes */
+  --container-xs: 20rem;
+  --container-md: 28rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-6xl: 72rem;
+  
+  /* Typography */
+  --text-xs: .75rem;
+  --text-xs--line-height: calc(1 / .75);
+  --text-sm: .875rem;
+  --text-sm--line-height: calc(1.25 / .875);
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 1.2;
+  
+  /* Font Weights */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Letter Spacing & Line Height */
+  --tracking-wider: .05em;
+  --leading-tight: 1.25;
+  --leading-relaxed: 1.625;
+  
+  /* Border Radius */
+  --radius-lg: .5rem;
+  
+  /* Animations */
+  --animate-spin: spin 1s linear infinite;
+  --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
+  
+  /* Transitions */
+  --default-transition-duration: .15s;
+  --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  
+  /* Default Fonts */
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
 }
 
 @layer base {
   html {
-    font-family: "Microsoft JhengHei UI Light", "Microsoft JhengHei", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
     font-size: 18px;
     line-height: 30px;
   }
 
   body {
-    @apply bg-zinc-50 text-zinc-900 antialiased;
+    background-color: #d8d4cf;
+    color: var(--darkreader-text--color-gray-900);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Code blocks styling */
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  /* Inline code */
+  :not(pre) > code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+
+  /* Code blocks - Astro uses .astro-code class for syntax highlighted blocks */
+  .astro-code {
+    padding: 1rem !important;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+
+  /* Ensure pre elements have proper styling */
+  pre {
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+
+  pre > code {
+    display: block;
   }
 }

@@ -21,7 +21,7 @@ export default function NavBar() {
     }, []);
 
     return (
-        <nav className="flex justify-between items-center py-6 px-4 max-w-5xl mx-auto">
+        <nav className="flex justify-between items-center py-2 px-4 max-w-5xl mx-auto">
             <div className="flex gap-6">
                 {navItems.map((item) => (
                     <a

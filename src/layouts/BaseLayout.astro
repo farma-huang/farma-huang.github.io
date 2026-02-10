@@ -15,11 +15,11 @@ const { pageTitle } = Astro.props;
 		<title>{pageTitle}</title>
 	</head>
 	<body
-		class="bg-zinc-50 text-zinc-900 antialiased selection:bg-rose-200 selection:text-rose-900"
+		class="text-zinc-900 antialiased selection:bg-rose-200 selection:text-rose-900"
 	>
 		<div class="min-h-screen flex flex-col">
 			<NavBar client:load />
-			<main class="flex-grow w-full max-w-5xl mx-auto px-4 py-8">
+			<main class="grow w-full max-w-5xl mx-auto px-4">
 				<slot />
 			</main>
 			<Footer />
