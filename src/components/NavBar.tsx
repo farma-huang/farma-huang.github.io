@@ -3,7 +3,8 @@ import clsx from 'clsx';
 
 const navItems = [
     { name: '首頁', href: '/' },
-    { name: '履歷', href: '/resume' },
+    // 暫且先隱藏
+    // { name: '履歷', href: '/resume' },
     { name: '關於我', href: '/about' },
 ];
 
