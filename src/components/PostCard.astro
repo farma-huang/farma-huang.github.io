@@ -15,7 +15,7 @@ const tags = post.frontmatter.tags || [];
 // Use a placeholder image if none exists, or use the first image from frontmatter if available
 const heroImage =
     post.frontmatter.image?.url ||
-    `https://placehold.co/600x400/e5e7eb/a1a1aa?text=${encodeURIComponent(post.frontmatter.title)}`;
+    `https://placehold.co/600x400/e5e7eb/a1a1aa?text=${encodeURIComponent(post.frontmatter.image.alt)}`;
 ---
 
 <a
