@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh-TW" class="scroll-smooth"> <head><meta charset="utf-8"><link rel="icon" type="image/x-icon" href="/favicon/favicon.ico"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.17.1"><title>InfluxDB 安裝筆記</title><link rel="stylesheet" href="/_astro/2022-01-16.BgHvUf0t.css">
+<style>.prose blockquote{background:#f4f4f5;border-left-color:#71717a;color:#52525b;font-style:italic;padding:1rem 1.5rem;border-radius:.5rem;quotes:none}.prose blockquote p:first-of-type:before{content:none}.prose blockquote p:last-of-type:after{content:none}.prose pre{border:1px solid #e4e4e7;border-radius:.5rem}.prose a{color:#52525b;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}.prose a:hover{border-bottom-color:#52525b}
+</style></head> <body class="text-zinc-900 antialiased selection:bg-zinc-200 selection:text-zinc-900"> <div class="min-h-screen flex flex-col"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="215qk7" prefix="r1" component-url="/_astro/NavBar.Dk-Gid0Q.js" component-export="default" renderer-url="/_astro/client.km8eLHr3.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;NavBar&quot;,&quot;value&quot;:true}" await-children><nav class="flex justify-between items-center py-2 px-4 max-w-5xl mx-auto"><div class="flex gap-6"><a href="/" class="text-lg leading-8 font-medium transition-colors hover:text-zinc-700 text-zinc-500">首頁</a><a href="/about" class="text-lg leading-8 font-medium transition-colors hover:text-zinc-700 text-zinc-500">關於我</a></div></nav><!--astro:end--></astro-island> <main class="grow w-full max-w-5xl mx-auto px-4">  <div class="max-w-5xl mx-auto relative px-4"> <div class="rounded-t-2xl overflow-hidden shadow-sm border border-zinc-200"> <img src="/assets/images/2022/01/16/influxdb-logo.svg" alt="InfluxDB Logo" class="w-full h-64 object-cover aspect-video"> </div> <article class="prose prose-zinc prose-lg mx-auto bg-card border border-zinc-200 rounded-b-lg px-8 py-4 shadow-sm max-w-none"> <nav class="flex items-center gap-2 text-sm text-zinc-500 mb-4 overflow-hidden"> <a href="/" class="transition-colors flex items-center gap-1 whitespace-nowrap"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+首頁
+</a> <span class="text-zinc-400">/</span> <span class="text-zinc-500 truncate font-medium">InfluxDB 安裝筆記</span> </nav> <!-- Main Content --> <header class="mb-4"> <h1 class="text-4xl font-bold text-zinc-900 mb-4 tracking-tight"> InfluxDB 安裝筆記 </h1> <div class="flex items-center gap-4 text-zinc-500 text-sm font-mono"> <span>2022-01-16</span> <span>by Farma</span> </div> </header> <div class="editorial-content"> <p>很多監視系統都採用了 TSDB（Time Series Database）資料庫來儲存海量資料，InfluxDB 也是熱門的 TSDB 之一，紀錄一下安裝方式…</p>
+<h2 id="簡介">簡介</h2>
+<blockquote>
+<p>“InfluxDB 目的在處理時間序列數據，SQL數據庫可以處理時間序列，但並非嚴格為此目的而創建的。簡而言之，InfluxDB可以存儲大量時間序列數據，并快速對這些數據執行實時分析。”</p>
+</blockquote>
+<p>出自：<a href="https://docs.influxdata.com/influxdb/v1.7/concepts/crosswalk/#a-note-on-why-influxdb-isn-t-crud">Why InfluxDB isn’t CRUD</a></p>
+<h2 id="安裝">安裝</h2>
+<p>這裡我需要下載：</p>
+<ul>
+<li><strong>InfluxDB</strong>：InfluxDB 相關應用程式</li>
+<li><strong>Chronograf</strong>：InfluxDB 的視覺化管理工具</li>
+</ul>
+<p>下載連結是一個壓縮檔，解壓縮後就可以直接使用：</p>
+<h3 id="influxdb-檔案結構">InfluxDB 檔案結構</h3>
+<ul>
+<li><strong>influxdb.conf</strong>：組態設定。</li>
+<li><strong>influxd.exe</strong>：點兩下就可以輕鬆架設一個 Influxdb Server。</li>
+<li><strong>influx.exe</strong>：Client，用來管理 Influxdb Server。</li>
+</ul>
+<h3 id="influxdbconf">influxdb.conf</h3>
+<p><code>[meta]</code> 及 <code>[data]</code> 是資料庫會用到的儲存檔設定，路徑記要用 <code>\\</code> 雙反斜線。<code>[http]</code> 則是連線設定，可以修改預設的 server port。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#B392F0">[meta]</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#6A737D"># Where the metadata/raft database is stored</span></span>
+<span class="line"><span style="color:#F97583">dir</span><span style="color:#E1E4E8"> = </span><span style="color:#9ECBFF">"C:\\influxdata\\meta"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">[data]</span></span>
+<span class="line"><span style="color:#6A737D"># The directory where the TSM storage engine stores TSM files.</span></span>
+<span class="line"><span style="color:#F97583">dir</span><span style="color:#E1E4E8"> = </span><span style="color:#9ECBFF">"C:\\influxdata\\data"</span></span>
+<span class="line"><span style="color:#6A737D"># The directory where the TSM storage engine stores WAL files.</span></span>
+<span class="line"><span style="color:#F97583">wal-dir</span><span style="color:#E1E4E8"> = </span><span style="color:#9ECBFF">"C:\\influxdata\\wal"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">[http]</span></span>
+<span class="line"><span style="color:#6A737D"># Determines whether HTTP endpoint is enabled.</span></span>
+<span class="line"><span style="color:#F97583">enabled</span><span style="color:#E1E4E8"> = true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># The bind address used by the HTTP service.</span></span>
+<span class="line"><span style="color:#F97583">bind-address</span><span style="color:#E1E4E8"> = </span><span style="color:#9ECBFF">":8086"</span></span></code></pre>
+<h2 id="啟動-influxdb-server">啟動 InfluxDB Server</h2>
+<p>使用命令提示字元啟動 <code>influxd.exe</code>。
+用命令提示字元切換到 influxdb 目錄。</p>
+<p>啟動 InfluxDB Server 並套用組態設定：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">influxd.exe</span><span style="color:#79B8FF"> --config</span><span style="color:#9ECBFF"> influxdb.conf</span></span></code></pre>
+<h2 id="使用-nssm-把-influxd-變成-windows-service">使用 NSSM 把 influxd 變成 Windows Service</h2>
+<p>官方沒有提供變成 Windows Service 的方式，我用 NSSM 把 <code>influxd.exe</code> 變成 Windows Service 啟動。</p>
+<p>下載位置：<a href="https://nssm.cc/download">NSSM - Status</a></p>
+<p>解壓縮，用管理員權限執行命令提示字元，切換到 nssm 目錄。</p>
+<p>輸入 <code>nssm install</code>，跳出操作介面，依照畫面的提示填寫：</p>
+<ul>
+<li><strong>Path</strong>：<code>D:\Lab\Monitor Server\influxdb-1.7.10_windows_amd64\influxdb-1.7.10-1\influxd.exe</code></li>
+<li><strong>Startup Directory</strong>：<code>D:\Lab\Monitor Server\influxdb-1.7.10_windows_amd64\influxdb-1.7.10-1</code></li>
+<li><strong>Arguments</strong>：<code>-config "D:\Lab\Monitor Server\influxdb-1.7.10_windows_amd64\influxdb-1.7.10-1\influxdb.conf"</code></li>
+<li><strong>Service Name</strong>：<code>InfluxDB1.7.10</code></li>
+</ul>
+<p>其他有關 Windows Service 的設定在別的頁籤，有需要的自己研究一下，最後按下 <strong>Install Service</strong>。</p>
+<p>服務安裝成功後，啟動服務：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">sc</span><span style="color:#9ECBFF"> start</span><span style="color:#9ECBFF"> InfluxDB1.7.10</span></span></code></pre>
+<p>查詢服務狀態：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">sc</span><span style="color:#9ECBFF"> query</span><span style="color:#9ECBFF"> InfluxDB1.7.10</span></span></code></pre>
+<h2 id="連接-influxdb-server">連接 InfluxDB Server</h2>
+<h3 id="influxexe">influx.exe</h3>
+<p><code>influx.exe</code> 是官方提供給我們管理 Server 的應用程式，首先用命令提示字元切換到 influxdb 目錄。</p>
+<p>執行 <code>influx.exe</code>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">influx.exe</span></span></code></pre>
+<p>這樣會使用預設的方式連接 Server <code>http://localhost:8086</code>。</p>
+<p>也可以根據需求連結到不同的 Server，要使用下面的範例記得把引號拿掉。</p>
+<p>指定位置：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">influx.exe</span><span style="color:#79B8FF"> -host</span><span style="color:#9ECBFF"> 'localhost'</span><span style="color:#79B8FF"> -port</span><span style="color:#9ECBFF"> '8086'</span></span></code></pre>
+<p>指定位置和資料庫：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">influx.exe</span><span style="color:#79B8FF"> -host</span><span style="color:#9ECBFF"> 'localhost'</span><span style="color:#79B8FF"> -port</span><span style="color:#9ECBFF"> '8086'</span><span style="color:#79B8FF"> -database</span><span style="color:#9ECBFF"> 'demo'</span></span></code></pre>
+<p>加密連線 SSL (使用非認證授權)：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">influx.exe</span><span style="color:#79B8FF"> -unsafeSsl</span><span style="color:#79B8FF"> -ssl</span></span></code></pre>
+<p>指定位置和授權：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">influx.exe</span><span style="color:#79B8FF"> -host</span><span style="color:#9ECBFF"> 'localhost'</span><span style="color:#79B8FF"> -port</span><span style="color:#9ECBFF"> '8086'</span><span style="color:#79B8FF"> -ssl</span><span style="color:#79B8FF"> -unsafeSsl</span><span style="color:#79B8FF"> -username</span><span style="color:#9ECBFF"> 'user'</span><span style="color:#79B8FF"> -password</span><span style="color:#9ECBFF"> 'password'</span></span></code></pre>
+<p>更改顯示時間格式 (預設為 timestamp)：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">influx.exe</span><span style="color:#79B8FF"> -precision</span><span style="color:#9ECBFF"> rfc3339</span></span></code></pre>
+<p>連結 Server 成功就會出現 <code>></code> 符號，等待輸入命令。下面就列出我常用的基本命令。</p>
+<h3 id="查詢有哪些資料庫">查詢有哪些資料庫</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> show databases</span></span></code></pre>
+<p><a href="https://docs.influxdata.com/influxdb/v1.7/query_language/schema_exploration#show-databases">Schema Exploration - show databases</a></p>
+<h3 id="使用資料庫">使用資料庫</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">></span><span style="color:#F97583"> use</span><span style="color:#E1E4E8"> telegraf</span></span></code></pre>
+<h3 id="查詢量測內容">查詢量測內容</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> show measurements</span></span></code></pre>
+<p><a href="https://docs.influxdata.com/influxdb/v1.7/query_language/schema_exploration#show-measurements">Schema Exploration - show measurements</a></p>
+<h3 id="新增資料庫">新增資料庫</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">></span><span style="color:#F97583"> CREATE</span><span style="color:#F97583"> DATABASE</span><span style="color:#9ECBFF"> 'DB'</span></span></code></pre>
+<p><a href="https://docs.influxdata.com/influxdb/v1.7/query_language/database_management/#create-database">Database Management - Create Database</a></p>
+<h3 id="刪除資料庫">刪除資料庫</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">></span><span style="color:#F97583"> DROP</span><span style="color:#F97583"> DATABASE</span><span style="color:#9ECBFF"> 'DB'</span></span></code></pre>
+<p><a href="https://docs.influxdata.com/influxdb/v1.7/query_language/database_management/#delete-a-database-with-drop-database">Database Management - Drop Database</a></p>
+<h2 id="chronograf">Chronograf</h2>
+<p>Chronograf 是官方提供的連接 Server 的視覺化管理工具。</p>
+<p>解壓縮後，檔案結構如下。直接執行 <code>chronograf.exe</code>，管理工具就建立起來了。</p>
+<p>接著用瀏覽器訪問 <a href="http://localhost:8888">http://localhost:8888</a></p>
+<h3 id="定義連線字串">定義連線字串</h3>
+<h3 id="選擇-dashboard">選擇 Dashboard</h3> </div> <hr class="my-8 border-gray-400"> <div class="flex justify-between items-center gap-4"> <div></div> <a href="/posts/2022/12/15/2022-12-15" class="flex flex-col items-end gap-1 group no-underline text-right"> <span class="text-xs font-mono text-zinc-400 group-hover:text-zinc-400 transition-colors">
+下一篇 →
+</span> <span class="text-zinc-400 font-medium group-hover:text-zinc-900 transition-colors"> Circular Dependency </span> </a> </div> </article> </div> <script type="module">function o(){document.querySelectorAll("pre").forEach(e=>{if(e.querySelector(".copy-btn"))return;const t=document.createElement("button");if(t.className="copy-btn absolute top-2 right-2 text-xs text-zinc-400 bg-zinc-800 hover:bg-zinc-700 px-2 py-1 rounded opacity-0 transition-opacity group-hover:opacity-100",t.textContent="Copy",e.parentElement?.classList.contains("relative"))e.parentElement.classList.add("group"),e.parentElement.appendChild(t);else{const n=document.createElement("div");n.className="relative group",e.parentNode?.insertBefore(n,e),n.appendChild(e),n.appendChild(t)}t.addEventListener("click",async()=>{const n=e.querySelector("code")?.innerText;n&&(await navigator.clipboard.writeText(n),t.textContent="Copied!",setTimeout(()=>{t.textContent="Copy"},2e3))})})}o();document.addEventListener("astro:page-load",o);</script>   </main> <footer class="text-center py-6">
+© 2026 Farma Huang. All rights reserved.
+</footer> </div> </body></html>

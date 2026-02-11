@@ -1,0 +1,9 @@
+import{r as b,R as v}from"./index.BX2CdW4Z.js";var l={exports:{}},i={};/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var d;function j(){if(d)return i;d=1;var r=b(),t=Symbol.for("react.element"),e=Symbol.for("react.fragment"),n=Object.prototype.hasOwnProperty,a=r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,y={key:!0,ref:!0,__self:!0,__source:!0};function p(u,s,x){var o,f={},c=null,_=null;x!==void 0&&(c=""+x),s.key!==void 0&&(c=""+s.key),s.ref!==void 0&&(_=s.ref);for(o in s)n.call(s,o)&&!y.hasOwnProperty(o)&&(f[o]=s[o]);if(u&&u.defaultProps)for(o in s=u.defaultProps,s)f[o]===void 0&&(f[o]=s[o]);return{$$typeof:t,type:u,key:c,ref:_,props:f,_owner:a.current}}return i.Fragment=e,i.jsx=p,i.jsxs=p,i}var h;function g(){return h||(h=1,l.exports=j()),l.exports}var m=g();function R(r){var t,e,n="";if(typeof r=="string"||typeof r=="number")n+=r;else if(typeof r=="object")if(Array.isArray(r)){var a=r.length;for(t=0;t<a;t++)r[t]&&(e=R(r[t]))&&(n&&(n+=" "),n+=e)}else for(e in r)r[e]&&(n&&(n+=" "),n+=e);return n}function w(){for(var r,t,e=0,n="",a=arguments.length;e<a;e++)(r=arguments[e])&&(t=R(r))&&(n&&(n+=" "),n+=t);return n}const E=[{name:"首頁",href:"/"},{name:"關於我",href:"/about"}];function N(){const[r,t]=v.useState("");return v.useEffect(()=>{const e=window.location.pathname;e==="/"?t("首頁"):e.startsWith("/resume")?t("履歷"):e.startsWith("/about")?t("關於我"):t("")},[]),m.jsx("nav",{className:"flex justify-between items-center py-2 px-4 max-w-5xl mx-auto",children:m.jsx("div",{className:"flex gap-6",children:E.map(e=>m.jsx("a",{href:e.href,className:w("text-lg leading-8 font-medium transition-colors hover:text-zinc-700",r===e.name?"text-zinc-900":"text-zinc-500"),children:e.name},e.name))})})}export{N as default};
