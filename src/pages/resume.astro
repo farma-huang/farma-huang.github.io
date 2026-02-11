@@ -1,0 +1,182 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "履歷 - Farma";
+
+const experiences = [
+    {
+        role: "資深工程師",
+        company: "奔騰網路科技 (Pentium Network)",
+        period: "2023 年 2 月 - 至今",
+        description:
+            "帶領前端團隊超過三年。負責建構 AI 維運 Agent (PentiumAgent) 與多雲特權管理平台 (MAVIS)。",
+        achievements: [
+            "負責大語言模型聊天界面、MCP 支援，任務排程。",
+            "規劃 MAVIS Desktop 專案架構並使用 Electron 實作。",
+            "利用 Module Federation 架構實作遠端模塊，提升產品彈性。",
+            "使用 WebComponent 與 Domain Driven Design (DDD) 開發 RAPD 系統。",
+        ],
+    },
+    {
+        role: "高級工程師",
+        company: "威聯通科技 (QNAP)",
+        period: "2014 年 11 月 - 2022 年 3 月",
+        description:
+            "專注於網通設備與資安解決方案的前端開發。使用 React, Vue.js, ECharts 等技術。",
+        achievements: [
+            "開發 ADRA 惡意軟體分析平台，建構易用的資安儀表板。",
+            "設計 QHora/QMiro 路由器管理介面，產品成功上架並獲媒體報導。",
+            "實作 QIoT 應用程式，整合 Node-RED 與 Azure Face API，下載量突破 97,000+。",
+            "開發 QRM+ 終端設備集中管理方案，獲馬來西亞總理辦公室採用。",
+        ],
+    },
+    {
+        role: "軟體工程師",
+        company: "瑞昱半導體 (Realtek)",
+        period: "2014 年 9 月 - 2014 年 11 月",
+        description: "開發智慧電視 Android 中間層與應用層。",
+    },
+    {
+        role: "高級工程師 / 研發替代役",
+        company: "仁寶電腦 (Compal)",
+        period: "2011 年 9 月 - 2014 年 9 月",
+        description: "負責內部研發流程自動化與 Android 韌體測試框架。",
+        achievements: [
+            "開發自動化編譯測試框架，榮獲公司年度最有商業價值獎。",
+            "帶領團隊協助客戶通過 Google GMS 認證，創造營收 NT$ 6,000,000+。",
+        ],
+    },
+];
+
+const education = [
+    {
+        degree: "資訊工程所 碩士",
+        school: "國立中央大學",
+        period: "2009 - 2011",
+    },
+    {
+        degree: "資訊工程系 學士",
+        school: "私立輔仁大學",
+        period: "2005 - 2009",
+    },
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="max-w-3xl mx-auto py-12">
+        <header class="mb-16 flex justify-between items-start">
+            <div>
+                <h1
+                    class="text-4xl font-bold text-zinc-900 mb-4 tracking-tight"
+                >
+                    黃信發 <span class="text-zinc-400 text-2xl font-normal ml-2"
+                        >Farma Huang</span
+                    >
+                </h1>
+                <p class="text-zinc-600 text-lg leading-relaxed max-w-xl">
+                    資深前端工程師，擁有十年以上軟體開發經驗。
+                    <br />
+                    擅長 React 生態系、前端架構設計與開發者體驗 (DX) 優化。
+                    <br />
+                    具備帶領團隊從零建構大型專案的實戰經驗。
+                </p>
+                <div class="flex gap-4 mt-6">
+                    <a
+                        href="mailto:farmahuang@gmail.com"
+                        class="text-zinc-500 hover:text-zinc-600 font-medium"
+                        >farmahuang@gmail.com</a
+                    >
+                    <span class="text-zinc-300">|</span>
+                    <a
+                        href="https://github.com/farma-huang"
+                        target="_blank"
+                        class="text-zinc-500 hover:text-zinc-800 transition-colors"
+                        >GitHub</a
+                    >
+                    <!-- <span class="text-zinc-300">|</span>
+                    <a
+                        href="/resume-en"
+                        class="text-zinc-500 hover:text-zinc-800 transition-colors"
+                        >English Version →</a
+                    > -->
+                </div>
+            </div>
+            <div
+                class="hidden md:block w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-lg bg-zinc-100"
+            >
+                <img
+                    src="/assets/images/avatar.png"
+                    alt="Farma Huang"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </header>
+
+        <div class="space-y-16">
+            <section>
+                <h2
+                    class="text-2xl font-bold text-zinc-900 mb-8 flex items-center gap-3"
+                >
+                    <span class="w-2 h-8 bg-zinc-500 rounded-full"></span>
+                    工作經歷
+                </h2>
+                <div class="space-y-12 pl-4 border-l-2 border-zinc-100 ml-1">
+                    {
+                        experiences.map((exp) => (
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[27px] top-2 w-4 h-4 rounded-full bg-white border-4 border-zinc-300" />
+                                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-zinc-800">
+                                        {exp.company}
+                                    </h3>
+                                    <span class="text-sm font-mono text-zinc-500 bg-zinc-100 px-2 py-1 rounded">
+                                        {exp.period}
+                                    </span>
+                                </div>
+                                <div class="text-zinc-600 font-medium mb-3">
+                                    {exp.role}
+                                </div>
+                                <p class="text-zinc-600 mb-4 leading-relaxed">
+                                    {exp.description}
+                                </p>
+                                {exp.achievements && (
+                                    <ul class="list-disc list-outside ml-4 space-y-1 mb-4 text-zinc-500 text-sm">
+                                        {exp.achievements.map((ach) => (
+                                            <li>{ach}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <section>
+                <h2
+                    class="text-2xl font-bold text-zinc-900 mb-8 flex items-center gap-3"
+                >
+                    <span class="w-2 h-8 bg-zinc-500 rounded-full"></span>
+                    學歷
+                </h2>
+                <div class="grid gap-6">
+                    {
+                        education.map((edu) => (
+                            <div class="p-6 rounded-xl shadow-sm border border-zinc-100 hover:shadow-md transition-shadow" style="background-color: var(--color-card-bg);">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-bold text-zinc-800">
+                                        {edu.school}
+                                    </h3>
+                                    <span class="text-sm text-zinc-400 font-mono">
+                                        {edu.period}
+                                    </span>
+                                </div>
+                                <div class="text-zinc-600">{edu.degree}</div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        </div>
+    </div>
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import Pagination from "../components/Pagination.astro";
+import type { Page } from "astro";
+
+// This function is required for pagination
+export async function getStaticPaths({ paginate }: any) {
+    const allPosts = Object.values(
+        import.meta.glob("../pages/posts/**/*.md", { eager: true }),
+    );
+
+    // Sort posts by date
+    const sortedPosts = allPosts.sort(
+        (a: any, b: any) =>
+            new Date(b.frontmatter.pubDate).valueOf() -
+            new Date(a.frontmatter.pubDate).valueOf(),
+    );
+
+    // Return paginated routes
+    return paginate(sortedPosts, { pageSize: 9 });
+}
+
+interface Props {
+    page: Page<any>;
+}
+
+const { page } = Astro.props;
+const pageTitle = "首頁 - Farma";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {page.data.map((post: any) => <PostCard post={post} />)}
+    </section>
+
+    <Pagination page={page} />
+</BaseLayout>

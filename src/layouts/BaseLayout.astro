@@ -1,27 +1,28 @@
 ---
-import clsx from 'clsx';
+import "../styles/global.css";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer.astro";
 
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-// const { content } = Astro.props;
-import '@styles/global.css';
-// import '@styles/bulma/bulma.min.css';
+const { pageTitle } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="zh-TW" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<!-- <meta name="description" content="Farma's blog" /> -->
-		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
-		<!-- <title>{content.title}</title> -->
+		<title>{pageTitle}</title>
 	</head>
-	<body>
-		<Header />
-		<div class={clsx('py-12 px-6')}>
-			<slot />
+	<body
+		class="text-zinc-900 antialiased selection:bg-zinc-200 selection:text-zinc-900"
+	>
+		<div class="min-h-screen flex flex-col">
+			<NavBar client:load />
+			<main class="grow w-full max-w-5xl mx-auto px-4">
+				<slot />
+			</main>
+			<Footer />
 		</div>
-		<Footer />
 	</body>
 </html>

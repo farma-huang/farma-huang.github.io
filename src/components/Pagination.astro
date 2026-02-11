@@ -1,0 +1,41 @@
+---
+const { page } = Astro.props;
+---
+
+<nav class="flex justify-center items-center gap-4 mt-12 mb-8">
+    {
+        page.url.prev ? (
+            <a
+                href={page.url.prev}
+                class="px-4 py-2 border border-zinc-200 text-zinc-600 rounded-lg hover:border-zinc-700 hover:text-zinc-700 transition-colors shadow-sm"
+                style="background-color: var(--color-card-bg);"
+            >
+                ← 上一頁
+            </a>
+        ) : (
+            <span class="px-4 py-2 border border-transparent text-zinc-300 cursor-not-allowed">
+                ← 上一頁
+            </span>
+        )
+    }
+
+    <div class="text-zinc-500 font-mono text-sm">
+        Page {page.currentPage} / {page.lastPage}
+    </div>
+
+    {
+        page.url.next ? (
+            <a
+                href={page.url.next}
+                class="px-4 py-2 border border-zinc-200 text-zinc-600 rounded-lg hover:border-zinc-700 hover:text-zinc-700 transition-colors shadow-sm"
+                style="background-color: var(--color-card-bg);"
+            >
+                下一頁 →
+            </a>
+        ) : (
+            <span class="px-4 py-2 border border-transparent text-zinc-300 cursor-not-allowed">
+                下一頁 →
+            </span>
+        )
+    }
+</nav>

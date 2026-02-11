@@ -1,0 +1,25 @@
+---
+const { headings } = Astro.props;
+
+// Filter out h1 (usually title) if needed, or just show h2/h3
+const toc = headings.filter((h: any) => h.depth > 1 && h.depth < 4);
+---
+
+<nav class="toc">
+    <ul class="space-y-2 text-sm">
+        {
+            toc.map((heading: any) => (
+                <li
+                    class={`toc-level-${heading.depth} pl-${(heading.depth - 2) * 4}`}
+                >
+                    <a
+                        href={`#${heading.slug}`}
+                        class="text-zinc-500 hover:text-blue-400 transition-colors block border-l-2 border-transparent hover:border-blue-500 pl-2"
+                    >
+                        {heading.text}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
