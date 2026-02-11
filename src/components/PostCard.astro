@@ -20,8 +20,7 @@ const heroImage =
 
 <a
     href={post.url}
-    class="group block rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-100 flex flex-col h-full"
-    style="background-color: var(--color-card-bg);"
+    class="group rounded-2xl bg-card-bg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-300 flex flex-col h-full"
 >
     <div class="aspect-video overflow-hidden bg-zinc-100 relative">
         <img
@@ -43,7 +42,7 @@ const heroImage =
         </div>
     </div>
 
-    <div class="p-6 flex flex-col flex-grow">
+    <div class="p-6 flex flex-col grow">
         <div class="text-sm text-zinc-400 mb-2 font-mono">
             {formatDate(post.frontmatter.pubDate)}
         </div>
@@ -53,7 +52,7 @@ const heroImage =
             {post.frontmatter.title}
         </h3>
         <p
-            class="text-zinc-500 text-sm line-clamp-3 leading-relaxed mb-4 flex-grow"
+            class="text-zinc-500 text-sm line-clamp-3 leading-relaxed mb-4 grow"
         >
             {post.frontmatter.description || "點擊閱讀更多..."}
         </p>
