@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { MapPin, Building2, Mail, Github } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 
 const pageTitle = "關於我 - Farma";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <div
-    class="rounded-3xl p-8 md:p-12 md:flex gap-12 items-start shadow-sm border border-zinc-100"
+    class="rounded-3xl p-8 md:p-12 md:flex gap-4 items-start shadow-sm border border-zinc-100"
     style="background-color: var(--color-card-bg);"
   >
     <!-- Left: Image -->
@@ -27,14 +27,11 @@ const pageTitle = "關於我 - Farma";
       <h1 class="text-2xl font-bold text-black mb-1">
         黃信發 <span class="text-zinc-600 text-lg font-normal ml-2">Farma</span>
       </h1>
-      <p class="text-zinc-700 text-sm mb-6">AI Powered Web Application Developer</p>
+      <p class="text-zinc-700 mb-6">AI Powered Web Application Developer</p>
 
       <div class="space-y-2 text-sm font-medium text-zinc-800">
         <div class="flex items-center gap-2">
           <MapPin className="w-4 h-4 text-zinc-700" /> 台北, 台灣
-        </div>
-        <div class="flex items-center gap-2">
-          <Building2 className="w-4 h-4 text-zinc-700" /> 奔騰網路科技
         </div>
         <div class="flex items-center gap-2">
           <Mail className="w-4 h-4 text-zinc-700" /> farmahuang@gmail.com
@@ -44,19 +41,43 @@ const pageTitle = "關於我 - Farma";
           target="_blank"
           class="flex items-center gap-2 hover:text-black transition-colors"
         >
-          <Github className="w-4 h-4 text-zinc-700" /> farma-huang
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4 text-zinc-700"
+          >
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            ></path>
+            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+          </svg> farma-huang
         </a>
       </div>
     </div>
 
     <!-- Right: Bio -->
     <div class="md:w-2/3 prose prose-zinc prose-lg">
-      <h2 class="text-3xl font-bold text-zinc-900 mb-6 font-display">
-        「哈囉，世界！」
-      </h2>
-
+      <p class="text-zinc-800 leading-relaxed font-medium mb-4">
+        嗨，我是一名熱愛運動的工程師，一邊投入技術精進，一邊努力維持良好的健康與身心靈平衡，也在生活中實踐正念與良善。
+      </p>
+      <p class="text-zinc-800 leading-relaxed font-medium mb-4">
+        在日常生活中，我喜歡透過重訓、有氧運動與戶外活動來紓壓，讓自己保持體能與專注力。同時，我也時刻保持正念：專注當下的呼吸、感受身體的狀態，觀察情緒起伏，學習與壓力和平共處。這個心態，讓我在面對高壓的專案或困難的技術問題時，能更冷靜地思考與選擇。
+      </p>
+      <p class="text-zinc-800 leading-relaxed font-medium mb-4">
+        對我來說，工程師的工作不只是寫程式或解決問題，更是一種持續學習與自我成長的過程。在這個過程中，「良善」對我格外重要。我希望自己在團隊裡，不只是高效的執行者，也是願意分享、傾聽與協助他人的夥伴。無論是幫同事除錯、分享學習資源，或是在意見不同時保持尊重與開放，我都努力讓每一次互動更有溫度。
+      </p>
+      <p class="text-zinc-800 leading-relaxed font-medium mb-4">
+        透過規律運動，我學會為自己設定目標、跟蹤進度、調整策略；透過正念，我學會停下來觀照內心；透過實踐良善，我學會在表達自我與體貼他人之間取得平衡。這些習慣也自然延伸到職涯與生活中。
+      </p>
       <p class="text-zinc-800 leading-relaxed font-medium">
-        你好，這裡純粹是紀錄個人的學習心得。
+        未來，我希望能結合工程背景與對運動、正念的熱情，分享訓練心得、效率工作的方式，以及在忙碌生活中維持好習慣的小技巧，也談談如何在理性與感性之間，活出更良善、更覺察的自己，陪伴同樣重視自我成長的人，一起找到屬於自己的平衡步調。
       </p>
     </div>
   </div>
