@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import NavBar from "../components/NavBar";
+import MobileBottomNav from "../components/MobileBottomNav";
 import Footer from "../components/Footer.astro";
 
 const { pageTitle } = Astro.props;
@@ -18,11 +19,14 @@ const { pageTitle } = Astro.props;
 		class="text-zinc-900 antialiased selection:bg-zinc-200 selection:text-zinc-900"
 	>
 		<div class="min-h-screen flex flex-col">
-			<NavBar client:load />
-			<main class="grow w-full max-w-5xl mx-auto px-4">
+			<div class="hidden lg:block">
+				<NavBar client:load />
+			</div>
+			<main class="grow w-full max-w-5xl mx-auto px-4 pb-20 lg:pb-0">
 				<slot />
 			</main>
 			<Footer />
+			<MobileBottomNav client:load />
 		</div>
 	</body>
 </html>
