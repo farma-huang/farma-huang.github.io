@@ -34,8 +34,8 @@ export default function MobileBottomNav() {
     }, []);
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-zinc-200 lg:hidden z-50">
-            <div className="flex justify-around items-center px-4 py-2 max-w-md mx-auto">
+        <nav className="fixed bottom-0 left-0 right-0 bg-card-bg border-t border-zinc-200 lg:hidden z-50">
+            <div className="flex justify-around items-center px-4 py-0.5 max-w-md mx-auto">
                 {navItems.map((item) => (
                     <a
                         key={item.name}

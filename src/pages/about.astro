@@ -7,8 +7,7 @@ const pageTitle = "關於我 - Farma";
 
 <BaseLayout pageTitle={pageTitle}>
   <div
-    class="rounded-3xl p-8 md:p-12 md:flex gap-4 items-start shadow-sm border border-zinc-100"
-    style="background-color: var(--color-card-bg);"
+    class="rounded-3xl px-3 py-8 lg:p-12 md:flex gap-4 items-start shadow-sm border border-zinc-100 bg-card-bg"
   >
     <!-- Left: Image -->
     <div
@@ -24,12 +23,12 @@ const pageTitle = "關於我 - Farma";
         />
       </div>
 
-      <h1 class="text-2xl font-bold text-black mb-1">
-        黃信發 <span class="text-zinc-600 text-lg font-normal ml-2">Farma</span>
+      <h1 class="text-[26px] lg:text-2xl font-bold text-black mb-1">
+        黃信發 <span class="text-zinc-600 text-xl lg:text-lg font-normal ml-2">Farma</span>
       </h1>
-      <p class="text-zinc-700 mb-6">AI Powered Web Application Developer</p>
+      <p class="text-lg lg:text-base text-zinc-700 mb-6">AI Powered Web Application Developer</p>
 
-      <div class="space-y-2 text-sm font-medium text-zinc-800">
+      <div class="space-y-2 text-base lg:text-sm font-medium text-zinc-800">
         <div class="flex items-center gap-2">
           <MapPin className="w-4 h-4 text-zinc-700" /> 台北, 台灣
         </div>
@@ -63,7 +62,7 @@ const pageTitle = "關於我 - Farma";
     </div>
 
     <!-- Right: Bio -->
-    <div class="md:w-2/3 prose prose-zinc prose-lg">
+    <div class="md:w-2/3 prose prose-zinc prose-xl lg:prose-lg">
       <p class="text-zinc-800 leading-relaxed font-medium mb-4">
         嗨，我是一名熱愛運動的工程師，一邊投入技術精進，一邊努力維持良好的健康與身心靈平衡，也在生活中實踐正念與良善。
       </p>
