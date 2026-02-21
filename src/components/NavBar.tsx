@@ -16,9 +16,10 @@ export default function NavBar() {
     const path = window.location.pathname
     // Simple matching
     if (path === '/') setActiveTab('首頁')
-    else if (path.startsWith('/resume')) setActiveTab('履歷')
     else if (path.startsWith('/about')) setActiveTab('關於我')
-    else if (path.startsWith('/portfolio')) setActiveTab('作品集')
+    // 暫且先隱藏
+    // else if (path.startsWith('/resume')) setActiveTab('履歷')
+    // else if (path.startsWith('/portfolio')) setActiveTab('作品集')
     else setActiveTab('')
   }, [])
 
