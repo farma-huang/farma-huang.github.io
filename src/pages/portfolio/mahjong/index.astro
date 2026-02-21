@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import MahjongGame from './MahjongGame'
+
+const pageTitle = '台灣麻將 - Farma'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="py-8 px-3 lg:px-0">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-zinc-900 mb-2">
+        台灣麻將
+      </h1>
+      <p class="text-zinc-600 text-base">
+        使用 React 與 TailwindCSS
+        打造的台灣麻將互動展示。
+      </p>
+    </div>
+
+    <div
+      class="w-full overflow-x-auto scroolbar-hide rounded-3xl ring-1 ring-zinc-200 shadow-sm"
+    >
+      <MahjongGame client:load />
+    </div>
+
+    <div class="mt-8 prose prose-zinc max-w-none">
+      <h3>關於這個專案</h3>
+      <p>
+        以 React 與 TypeScript 打造的台灣麻將，與 AI 對手對戰。
+        支援完整的摸牌、出牌、吃、碰、槓與胡牌流程，並內建台數計算。
+      </p>
+    </div>
+  </div>
+</BaseLayout>

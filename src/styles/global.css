@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-
 @theme {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -60,7 +59,7 @@
   --darkreader-text--color-white: var(--darkreader-text-ffffff, #dcdad7);
   
   /* Custom Background Colors */
-  --color-page-bg: rgb(215, 213, 209);
+  --color-page-bg: #e8decf;
   --color-card-bg: rgb(220, 218, 215);
   
   /* Spacing */
@@ -116,54 +115,60 @@
 }
 
 @layer base {
-  html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
-    font-size: 18px;
-    line-height: 30px;
-  }
+	html {
+		font-family:
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			Segoe UI,
+			Roboto,
+			sans-serif;
+		font-size: 18px;
+		line-height: 30px;
+	}
 
-  body {
-    background-color: rgb(215, 213, 209);
-    color: var(--darkreader-text--color-gray-900);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+	body {
+		background-color: #e8decf;
+		color: var(--darkreader-text--color-gray-900);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 
-  /* Code blocks styling */
-  code {
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-  }
+	/* Code blocks styling */
+	code {
+		font-family: var(--font-mono);
+		font-size: 0.9em;
+	}
 
-  /* Inline code */
-  :not(pre) > code {
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-size: 0.85em;
-  }
+	/* Inline code */
+	:not(pre) > code {
+		background-color: rgba(0, 0, 0, 0.05);
+		padding: 0.2em 0.4em;
+		border-radius: 3px;
+		font-size: 0.85em;
+	}
 
-  /* Code blocks - Astro uses .astro-code class for syntax highlighted blocks */
-  .astro-code {
-    padding: 1rem !important;
-    border-radius: 0.5rem;
-    overflow-x: auto;
-    line-height: 1.5;
-  }
+	/* Code blocks - Astro uses .astro-code class for syntax highlighted blocks */
+	.astro-code {
+		padding: 1rem !important;
+		border-radius: 0.5rem;
+		overflow-x: auto;
+		line-height: 1.5;
+	}
 
-  /* Ensure pre elements have proper styling */
-  pre {
-    margin: 1rem 0;
-    overflow-x: auto;
-  }
+	/* Ensure pre elements have proper styling */
+	pre {
+		margin: 1rem 0;
+		overflow-x: auto;
+	}
 
-  pre > code {
-    display: block;
-  }
+	pre > code {
+		display: block;
+	}
 }
 
 @layer utilities {
-  .bg-card {
-    background-color: rgb(220, 218, 215);
-  }
+	.bg-card {
+		background-color: rgb(220, 218, 215);
+	}
 }

@@ -1,4 +1,4 @@
-import typography from '@tailwindcss/typography';
+import typography from '@tailwindcss/typography'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,9 +6,9 @@ export default {
 	theme: {
 		extend: {
 			backgroundColor: {
-				'card': 'var(--color-card-bg)',
+				card: 'var(--color-card-bg)',
 			},
 		},
 	},
 	plugins: [typography],
-};
+}

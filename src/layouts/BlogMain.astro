@@ -1,18 +1,18 @@
 ---
-import clsx from "clsx";
-import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
-import type { MarkdownInstance } from "astro";
+import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
+import type { MarkdownInstance } from 'astro'
+import clsx from 'clsx'
 
 const postModules = import.meta.glob<MarkdownInstance<Record<string, any>>>(
-  "../pages/posts/**/*.md*",
+  '../pages/posts/**/*.md*',
   { eager: true },
-);
+)
 
 let allPosts = Object.values(postModules).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).getTime() -
     new Date(a.frontmatter.pubDate).getTime(),
-);
+)
 ---
 
 <div class={clsx("container", "mx-auto", "lg:max-w-4xl md:max-w-3xl")}>
