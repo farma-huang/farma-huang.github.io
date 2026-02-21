@@ -6,45 +6,48 @@ const pageTitle = '台灣麻將 - Farma'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="py-8">
-        <div class="mb-8">
-            <h1 class="text-3xl font-bold text-zinc-900 mb-2">
-                台灣麻將
-            </h1>
-            <p class="text-zinc-600 text-base">
-                使用 React 與 TailwindCSS
-                打造的台灣麻將互動展示。
-            </p>
-        </div>
-
-        <div
-            class="w-full overflow-x-auto scroolbar-hide rounded-3xl ring-1 ring-zinc-200 shadow-sm"
-        >
-            <MahjongGame client:load />
-        </div>
-
-        <div class="mt-8 prose prose-zinc max-w-none">
-            <h3>關於這個專案</h3>
-            <p>
-                這是一個以 React 和 TypeScript
-                開發的台灣麻將（16張）互動展示。
-            </p>
-            <ul>
-                <li>
-                    <strong>定義牌組：</strong> 包含萬、筒、條、風、箭共 136 張基礎牌。
-                </li>
-                <li>
-                    <strong>狀態管理：</strong> 管理牌山 (Deck)、手牌 (Hand) 與海底
-                    (Discards) 的資料流。
-                </li>
-                <li>
-                    <strong>互動邏輯：</strong> 滿 16 張點擊牌山摸牌，滿 17 張時點擊手牌即可打出。
-                </li>
-                <li>
-                    <strong>視覺設計：</strong> 結合 TailwindCSS 繪製擬真桌面與立體質感的麻將牌面。
-                </li>
-            </ul>
-            <p>此版本為互動展示用途，尚未包含胡牌判定、吃碰槓等進階規則。</p>
-        </div>
+  <div class="py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-zinc-900 mb-2">
+        台灣麻將
+      </h1>
+      <p class="text-zinc-600 text-base">
+        使用 React 與 TailwindCSS
+        打造的台灣麻將互動展示。
+      </p>
     </div>
+
+    <div
+      class="w-full overflow-x-auto scroolbar-hide rounded-3xl ring-1 ring-zinc-200 shadow-sm"
+    >
+      <MahjongGame client:load />
+    </div>
+
+    <div class="mt-8 prose prose-zinc max-w-none">
+      <h3>關於這個專案</h3>
+      <p>
+        這是一個以 React 和 TypeScript 開發的台灣麻將（13張）雙人對戰遊戲，玩家與 AI 對手輪流摸牌、出牌。
+      </p>
+      <ul>
+        <li>
+          <strong>牌組定義：</strong> 包含萬、筒、條、風基礎牌，洗牌後發給雙方。
+        </li>
+        <li>
+          <strong>莊閒制度：</strong> 每局隨機決定莊家，莊家先發 14 張可直接出牌，閒家持 13 張等待摸牌。
+        </li>
+        <li>
+          <strong>互動邏輯：</strong> 支援摸牌、出牌、吃、碰、槓及自摸/胡牌等完整操作。
+        </li>
+        <li>
+          <strong>AI 對手：</strong> 內建 AI 自動判斷出牌與反應（吃碰槓胡），模擬真實對局節奏。
+        </li>
+        <li>
+          <strong>胡牌計算：</strong> 支援台數計算，包含平胡、對對胡、清一色、字一色等番型判定。
+        </li>
+        <li>
+          <strong>視覺設計：</strong> 結合 TailwindCSS 繪製擬真麻將桌面與立體質感的麻將牌面精靈圖。
+        </li>
+      </ul>
+    </div>
+  </div>
 </BaseLayout>

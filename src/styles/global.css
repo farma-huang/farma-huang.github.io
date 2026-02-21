@@ -59,7 +59,7 @@
   --darkreader-text--color-white: var(--darkreader-text-ffffff, #dcdad7);
   
   /* Custom Background Colors */
-  --color-page-bg: rgb(215, 213, 209);
+  --color-page-bg: #e8decf;
   --color-card-bg: rgb(220, 218, 215);
   
   /* Spacing */
@@ -128,7 +128,7 @@
 	}
 
 	body {
-		background-color: rgb(215, 213, 209);
+		background-color: #e8decf;
 		color: var(--darkreader-text--color-gray-900);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;

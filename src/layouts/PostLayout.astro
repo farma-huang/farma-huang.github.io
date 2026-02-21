@@ -25,7 +25,7 @@ const prevPost =
   <div class="max-w-5xl mx-auto relative px-4">
     {
       frontmatter.image && (
-        <div class="rounded-t-2xl overflow-hidden shadow-sm border border-zinc-200">
+        <div class="rounded-t-2xl overflow-hidden shadow-sm border border-zinc-200 bg-zinc-200">
           <img
             src={frontmatter.image.url}
             alt={frontmatter.image.alt || frontmatter.title}
@@ -74,7 +74,6 @@ const prevPost =
         </h1>
         <div class="flex items-center gap-4 text-zinc-500 text-sm font-mono">
           <span>{frontmatter.pubDate?.slice(0, 10)}</span>
-          {frontmatter.author && <span>by {frontmatter.author}</span>}
         </div>
       </header>
 

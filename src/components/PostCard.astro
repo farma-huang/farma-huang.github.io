@@ -22,7 +22,7 @@ const heroImage =
   href={post.url}
   class="group rounded-2xl bg-card-bg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-300 flex flex-col h-full"
 >
-  <div class="aspect-video overflow-hidden bg-zinc-100 relative">
+  <div class="aspect-[5/3] lg:aspect-video overflow-hidden bg-zinc-200 relative">
     <img
       src={heroImage}
       alt={post.frontmatter.title}
@@ -40,7 +40,7 @@ const heroImage =
     </div>
   </div>
 
-  <div class="p-6 flex flex-col grow">
+  <div class="p-4 lg:p-6 flex flex-col grow">
     <div class="text-sm text-zinc-400 mb-2 font-mono">
       {formatDate(post.frontmatter.pubDate)}
     </div>
