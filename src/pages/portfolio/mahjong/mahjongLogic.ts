@@ -304,8 +304,8 @@ export const calculateTai = (
       Array.from(countTiles(hand).values()).every((v) => v === 3 || v === 2)
     // Note: checking all pungs perfectly requires the solver, using heuristic for now
     if (isAllPung) {
-      tai += 2
-      reasons.push('對對胡 (2台)')
+      tai += 4
+      reasons.push('對對胡 (4台)')
     }
   }
 
@@ -320,11 +320,11 @@ export const calculateTai = (
   const suitCount = [hasCharacters, hasDots, hasBamboos].filter(Boolean).length
   if (suitCount === 1) {
     if (hasHonors) {
-      tai += 2
-      reasons.push('混一色 (2台)')
-    } else {
       tai += 4
-      reasons.push('清一色 (4台)')
+      reasons.push('混一色 (4台)')
+    } else {
+      tai += 8
+      reasons.push('清一色 (8台)')
     }
   }
 
