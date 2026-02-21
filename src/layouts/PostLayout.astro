@@ -149,6 +149,12 @@ const prevPost =
       content: none;
     }
 
+    /* Remove backtick quotes around inline code added by Tailwind Typography */
+    .prose code::before,
+    .prose code::after {
+      content: none;
+    }
+
     /* Code Blocks */
     .prose pre {
       /* background-color: #18181b !important; default pretty good */
