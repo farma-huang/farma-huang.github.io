@@ -5,8 +5,8 @@ const navItems = [
   { name: '首頁', href: '/' },
   // 暫且先隱藏
   // { name: '履歷', href: '/resume' },
+  // { name: '作品集', href: '/portfolio' },
   { name: '關於我', href: '/about' },
-  { name: '作品集', href: '/portfolio' },
 ]
 
 export default function NavBar() {

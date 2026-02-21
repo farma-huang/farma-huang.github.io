@@ -451,7 +451,7 @@ export default function MahjongGame() {
       : []
 
   return (
-    <div className="flex flex-col gap-4 md:gap-6 p-4 md:p-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-700 via-emerald-900 to-[#022c22] rounded-3xl text-white shadow-2xl relative overflow-hidden xl:min-w-[900px]">
+    <div className="flex flex-col gap-4 md:gap-6 p-4 md:p-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#2d5016] via-[#1a3a0a] to-[#0f2205] rounded-3xl text-white shadow-2xl relative overflow-hidden xl:min-w-[900px]">
       {/* Table Texture */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
@@ -462,7 +462,7 @@ export default function MahjongGame() {
 
       {/* AI AREA (Top) */}
       <div className="flex flex-col gap-2 bg-black/20 p-4 rounded-xl border border-white/5 relative z-10 w-full min-h-[140px]">
-        <div className="flex justify-between text-xs text-emerald-300/60 font-bold uppercase tracking-widest">
+        <div className="flex justify-between text-xs text-lime-300/60 font-bold uppercase tracking-widest">
           <span>AI 對手 {dealer === 'ai' ? '🚩 (莊)' : ''}</span>
           <span>手牌 {aiState.hand.length} 張</span>
         </div>
@@ -501,7 +501,7 @@ export default function MahjongGame() {
       {/* CENTER DASHBOARD (Status & Actions) */}
       <div className="flex flex-col items-center justify-center p-3 z-10 w-full relative">
         <div className="flex items-center gap-3">
-          <span className="text-emerald-100/60 text-sm font-bold bg-black/30 px-3 py-1.5 rounded-lg border border-white/5 shadow-inner flex items-center gap-2">
+          <span className="text-lime-100/60 text-sm font-bold bg-black/30 px-3 py-1.5 rounded-lg border border-white/5 shadow-inner flex items-center gap-2">
             剩餘牌山:{' '}
             <span className="text-amber-400 text-lg">{deck.length}</span>
             {phase === 'player_draw' && (
@@ -621,7 +621,7 @@ export default function MahjongGame() {
           ))}
         </div>
 
-        <div className="flex items-end gap-2 md:gap-4 w-full overflow-x-auto scroolbar-hide shrink-0 pb-2">
+        <div className="flex items-end gap-2 md:gap-4 w-full flex-wrap shrink-0 pb-2">
           {/* Player Melds */}
           {playerState.melds.map((m, i) => (
             <div
@@ -634,7 +634,7 @@ export default function MahjongGame() {
           ))}
 
           {/* Player Hand */}
-          <div className="flex gap-0.5 md:gap-1 items-end ml-auto pr-4">
+          <div className="flex flex-wrap gap-0.5 md:gap-1 items-end ml-auto pr-4">
             {playerState.hand.map((t, i) => {
               // The last tile drawn dynamically separates slightly
               // Note: we just assume if hand is 14 or we are in discard phase, last tile is drawn

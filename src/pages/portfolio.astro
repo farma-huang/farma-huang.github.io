@@ -5,12 +5,11 @@ const pageTitle = '作品集 - Farma'
 
 const projects = [
   {
-    title: '台灣麻將 (Web版)',
+    title: '台灣麻將',
     description:
       '使用 React 與 TypeScript 開發的台灣麻將互動展示，實作了 16 張麻將的洗牌、發牌、摸牌與打牌等核心互動邏輯。',
     tags: ['React', 'TypeScript', 'Game'],
     link: '/mahjong',
-    linkLabel: '馬上試玩',
     icon: '🀄',
   },
   // {
@@ -83,55 +82,36 @@ const projects = [
     <!-- Cards Grid: 2 columns -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
-        projects.map((project) => (
-          <div class="rounded-2xl border border-zinc-200 bg-card-bg shadow-sm p-6 flex flex-col gap-4 hover:shadow-md transition-shadow">
-            <!-- Icon + Title -->
-            <div class="flex items-center gap-3">
-              <span class="text-3xl leading-none">{project.icon}</span>
-              <h2 class="text-lg font-bold text-zinc-900">{project.title}</h2>
-            </div>
+        projects.map((project) => {
+          const Tag = project.link ? 'a' : 'div'
+          return (
+            <Tag
+              href={project.link || undefined}
+              rel={project.link ? 'noopener noreferrer' : undefined}
+              class={`rounded-2xl border border-zinc-200 bg-card-bg shadow-sm p-6 flex flex-col gap-4 transition-shadow${project.link ? ' hover:shadow-md cursor-pointer' : ''}`}
+            >
+              <!-- Icon + Title -->
+              <div class="flex items-center gap-3">
+                <span class="text-3xl leading-none">{project.icon}</span>
+                <h2 class="text-lg font-bold text-zinc-900">{project.title}</h2>
+              </div>
 
-            <!-- Description -->
-            <p class="text-sm text-zinc-600 leading-relaxed flex-1">
-              {project.description}
-            </p>
+              <!-- Description -->
+              <p class="text-sm text-zinc-600 leading-relaxed flex-1">
+                {project.description}
+              </p>
 
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span class="px-2.5 py-0.5 rounded-full bg-zinc-200 text-zinc-700 text-xs font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <!-- Link (optional) -->
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-800 hover:text-black transition-colors mt-auto"
-              >
-                {project.linkLabel}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
-              </a>
-            )}
-          </div>
-        ))
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span class="px-2.5 py-0.5 rounded-full bg-zinc-200 text-zinc-700 text-xs font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </Tag>
+          )
+        })
       }
     </div>
   </div>
