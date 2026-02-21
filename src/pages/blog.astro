@@ -1,11 +1,11 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import type { MarkdownInstance } from "astro";
+import BaseLayout from '@layouts/BaseLayout.astro'
+import type { MarkdownInstance } from 'astro'
 
 const allPosts = import.meta.glob<MarkdownInstance<Record<string, any>>>(
-  "./posts/**/*.md*",
+  './posts/**/*.md*',
   { eager: true },
-);
+)
 ---
 
 <BaseLayout>

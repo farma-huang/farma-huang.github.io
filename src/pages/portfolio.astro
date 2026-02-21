@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const pageTitle = '作品集 - Farma'
+
+const projects = [
+  {
+    title: '台灣麻將 (Web版)',
+    description:
+      '使用 React 與 TypeScript 開發的台灣麻將互動展示，實作了 16 張麻將的洗牌、發牌、摸牌與打牌等核心互動邏輯。',
+    tags: ['React', 'TypeScript', 'Game'],
+    link: '/mahjong',
+    linkLabel: '馬上試玩',
+    icon: '🀄',
+  },
+  // {
+  //   title: "個人部落格",
+  //   description:
+  //     "以 Astro 框架建立的靜態部落格，記錄技術筆記、生活感悟與學習歷程。支援分頁瀏覽與響應式設計。",
+  //   tags: ["Astro", "TailwindCSS", "TypeScript"],
+  //   link: "https://farma-huang.github.io",
+  //   linkLabel: "前往網站",
+  //   icon: "📝",
+  // },
+  // {
+  //   title: "AI 輔助開發工具",
+  //   description:
+  //     "整合 OpenAI API，幫助開發者快速生成程式碼片段、撰寫文件，以及自動化重複性任務，提升開發效率。",
+  //   tags: ["Python", "FastAPI", "OpenAI"],
+  //   link: "",
+  //   linkLabel: "",
+  //   icon: "🤖",
+  // },
+  // {
+  //   title: "健身訓練紀錄 App",
+  //   description:
+  //     "記錄每次重訓課表、組數與重量的行動應用程式，支援數據視覺化與進度追蹤，以直覺化圖表呈現成長曲線。",
+  //   tags: ["React Native", "TypeScript", "Supabase"],
+  //   link: "",
+  //   linkLabel: "",
+  //   icon: "💪",
+  // },
+  // {
+  //   title: "資料儀表板",
+  //   description:
+  //     "企業內部使用的資料視覺化儀表板，整合多個 API 數據來源，以互動式圖表呈現關鍵業務指標，協助決策。",
+  //   tags: ["React", "D3.js", "Node.js"],
+  //   link: "",
+  //   linkLabel: "",
+  //   icon: "📊",
+  // },
+  // {
+  //   title: "線上預約系統",
+  //   description:
+  //     "為健身房設計的線上課程預約平台，具備會員管理、課表排班、即時通知等功能，大幅降低行政成本。",
+  //   tags: ["Next.js", "PostgreSQL", "Prisma"],
+  //   link: "",
+  //   linkLabel: "",
+  //   icon: "📅",
+  // },
+  // {
+  //   title: "監控告警平台",
+  //   description:
+  //     "基於 InfluxDB 與 Grafana 的時序資料監控系統，支援自訂告警規則，並透過 LINE/Email 即時推送通知。",
+  //   tags: ["InfluxDB", "Grafana", "Docker"],
+  //   link: "",
+  //   linkLabel: "",
+  //   icon: "🔔",
+  // },
+]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="px-3 py-8 lg:p-12">
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold text-black mb-2">作品集</h1>
+      <p class="text-zinc-600 text-base">
+        這裡收錄了我參與開發或獨立完成的專案，涵蓋 Web 應用、工具開發與資料平台。
+      </p>
+    </div>
+
+    <!-- Cards Grid: 2 columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        projects.map((project) => (
+          <div class="rounded-2xl border border-zinc-200 bg-card-bg shadow-sm p-6 flex flex-col gap-4 hover:shadow-md transition-shadow">
+            <!-- Icon + Title -->
+            <div class="flex items-center gap-3">
+              <span class="text-3xl leading-none">{project.icon}</span>
+              <h2 class="text-lg font-bold text-zinc-900">{project.title}</h2>
+            </div>
+
+            <!-- Description -->
+            <p class="text-sm text-zinc-600 leading-relaxed flex-1">
+              {project.description}
+            </p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="px-2.5 py-0.5 rounded-full bg-zinc-200 text-zinc-700 text-xs font-medium">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <!-- Link (optional) -->
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-800 hover:text-black transition-colors mt-auto"
+              >
+                {project.linkLabel}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                  />
+                </svg>
+              </a>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

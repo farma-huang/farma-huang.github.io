@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { MapPin, Mail } from "lucide-react";
+import { Mail, MapPin } from 'lucide-react'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
-const pageTitle = "關於我 - Farma";
+const pageTitle = '關於我 - Farma'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -24,9 +24,13 @@ const pageTitle = "關於我 - Farma";
       </div>
 
       <h1 class="text-[26px] lg:text-2xl font-bold text-black mb-1">
-        黃信發 <span class="text-zinc-600 text-xl lg:text-lg font-normal ml-2">Farma</span>
+        黃信發 <span class="text-zinc-600 text-xl lg:text-lg font-normal ml-2"
+          >Farma</span
+        >
       </h1>
-      <p class="text-lg lg:text-base text-zinc-700 mb-6">AI Powered Web Application Developer</p>
+      <p class="text-lg lg:text-base text-zinc-700 mb-6">
+        AI Powered Web Application Developer
+      </p>
 
       <div class="space-y-2 text-base lg:text-sm font-medium text-zinc-800">
         <div class="flex items-center gap-2">
@@ -59,6 +63,26 @@ const pageTitle = "關於我 - Farma";
           </svg> farma-huang
         </a>
       </div>
+
+      <a
+        href="/portfolio"
+        class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-800 text-white text-sm font-medium hover:bg-zinc-700 transition-colors"
+      >
+        查看我的作品集
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+        </svg>
+      </a>
     </div>
 
     <!-- Right: Bio -->

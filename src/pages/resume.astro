@@ -1,65 +1,65 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro'
 
-const pageTitle = "履歷 - Farma";
+const pageTitle = '履歷 - Farma'
 
 const experiences = [
-    {
-        role: "資深工程師",
-        company: "奔騰網路科技 (Pentium Network)",
-        period: "2023 年 2 月 - 至今",
-        description:
-            "帶領前端團隊超過三年。負責建構 AI 維運 Agent (PentiumAgent) 與多雲特權管理平台 (MAVIS)。",
-        achievements: [
-            "負責大語言模型聊天界面、MCP 支援，任務排程。",
-            "規劃 MAVIS Desktop 專案架構並使用 Electron 實作。",
-            "利用 Module Federation 架構實作遠端模塊，提升產品彈性。",
-            "使用 WebComponent 與 Domain Driven Design (DDD) 開發 RAPD 系統。",
-        ],
-    },
-    {
-        role: "高級工程師",
-        company: "威聯通科技 (QNAP)",
-        period: "2014 年 11 月 - 2022 年 3 月",
-        description:
-            "專注於網通設備與資安解決方案的前端開發。使用 React, Vue.js, ECharts 等技術。",
-        achievements: [
-            "開發 ADRA 惡意軟體分析平台，建構易用的資安儀表板。",
-            "設計 QHora/QMiro 路由器管理介面，產品成功上架並獲媒體報導。",
-            "實作 QIoT 應用程式，整合 Node-RED 與 Azure Face API，下載量突破 97,000+。",
-            "開發 QRM+ 終端設備集中管理方案，獲馬來西亞總理辦公室採用。",
-        ],
-    },
-    {
-        role: "軟體工程師",
-        company: "瑞昱半導體 (Realtek)",
-        period: "2014 年 9 月 - 2014 年 11 月",
-        description: "開發智慧電視 Android 中間層與應用層。",
-    },
-    {
-        role: "高級工程師 / 研發替代役",
-        company: "仁寶電腦 (Compal)",
-        period: "2011 年 9 月 - 2014 年 9 月",
-        description: "負責內部研發流程自動化與 Android 韌體測試框架。",
-        achievements: [
-            "開發自動化編譯測試框架，榮獲公司年度最有商業價值獎。",
-            "帶領團隊協助客戶通過 Google GMS 認證，創造營收 NT$ 6,000,000+。",
-        ],
-    },
-];
+  {
+    role: '資深工程師',
+    company: '奔騰網路科技 (Pentium Network)',
+    period: '2023 年 2 月 - 至今',
+    description:
+      '帶領前端團隊超過三年。負責建構 AI 維運 Agent (PentiumAgent) 與多雲特權管理平台 (MAVIS)。',
+    achievements: [
+      '負責大語言模型聊天界面、MCP 支援，任務排程。',
+      '規劃 MAVIS Desktop 專案架構並使用 Electron 實作。',
+      '利用 Module Federation 架構實作遠端模塊，提升產品彈性。',
+      '使用 WebComponent 與 Domain Driven Design (DDD) 開發 RAPD 系統。',
+    ],
+  },
+  {
+    role: '高級工程師',
+    company: '威聯通科技 (QNAP)',
+    period: '2014 年 11 月 - 2022 年 3 月',
+    description:
+      '專注於網通設備與資安解決方案的前端開發。使用 React, Vue.js, ECharts 等技術。',
+    achievements: [
+      '開發 ADRA 惡意軟體分析平台，建構易用的資安儀表板。',
+      '設計 QHora/QMiro 路由器管理介面，產品成功上架並獲媒體報導。',
+      '實作 QIoT 應用程式，整合 Node-RED 與 Azure Face API，下載量突破 97,000+。',
+      '開發 QRM+ 終端設備集中管理方案，獲馬來西亞總理辦公室採用。',
+    ],
+  },
+  {
+    role: '軟體工程師',
+    company: '瑞昱半導體 (Realtek)',
+    period: '2014 年 9 月 - 2014 年 11 月',
+    description: '開發智慧電視 Android 中間層與應用層。',
+  },
+  {
+    role: '高級工程師 / 研發替代役',
+    company: '仁寶電腦 (Compal)',
+    period: '2011 年 9 月 - 2014 年 9 月',
+    description: '負責內部研發流程自動化與 Android 韌體測試框架。',
+    achievements: [
+      '開發自動化編譯測試框架，榮獲公司年度最有商業價值獎。',
+      '帶領團隊協助客戶通過 Google GMS 認證，創造營收 NT$ 6,000,000+。',
+    ],
+  },
+]
 
 const education = [
-    {
-        degree: "資訊工程所 碩士",
-        school: "國立中央大學",
-        period: "2009 - 2011",
-    },
-    {
-        degree: "資訊工程系 學士",
-        school: "私立輔仁大學",
-        period: "2005 - 2009",
-    },
-];
+  {
+    degree: '資訊工程所 碩士',
+    school: '國立中央大學',
+    period: '2009 - 2011',
+  },
+  {
+    degree: '資訊工程系 學士',
+    school: '私立輔仁大學',
+    period: '2005 - 2009',
+  },
+]
 ---
 
 <BaseLayout pageTitle={pageTitle}>
