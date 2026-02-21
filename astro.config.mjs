@@ -6,6 +6,9 @@ import { defineConfig } from 'astro/config'
 // https://astro.build/config
 export default defineConfig({
 	integrations: [mdx(), react()],
+	image: {
+		domains: ['placehold.co'],
+	},
 	vite: {
 		plugins: [tailwindcss()],
 	},

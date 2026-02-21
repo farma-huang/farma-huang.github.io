@@ -1,5 +1,6 @@
 ---
-const { post } = Astro.props
+import { Image } from 'astro:assets'
+const { post, loading = 'lazy' } = Astro.props
 
 // Helper to format date
 const formatDate = (dateString: string) => {
@@ -23,11 +24,13 @@ const heroImage =
   class="group rounded-2xl bg-card-bg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-300 flex flex-col h-full"
 >
   <div class="aspect-[5/3] lg:aspect-video overflow-hidden bg-zinc-200 relative">
-    <img
+    <Image
       src={heroImage}
       alt={post.frontmatter.title}
       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      loading="eager"
+      loading={loading}
+      width={600}
+      height={400}
     />
     <div class="absolute top-3 left-3 flex gap-2">
       {
