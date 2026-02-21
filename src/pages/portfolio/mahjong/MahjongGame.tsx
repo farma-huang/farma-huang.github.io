@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { decideDiscard, decideReaction } from '../utils/mahjongBot'
-import type { Meld, PlayerState, Tile } from '../utils/mahjongLogic'
+import { decideDiscard, decideReaction } from './mahjongBot'
+import type { Meld, PlayerState, Tile } from './mahjongLogic'
 import {
   calculateTai,
   canHu,
@@ -11,9 +11,9 @@ import {
   getTileKey,
   shuffle,
   sortHand,
-} from '../utils/mahjongLogic'
+} from './mahjongLogic'
 
-const SVG_PATH = '/assets/images/mahjong-game_104678.svg'
+const SVG_PATH = '/assets/images/portfolio/mahjong/mahjong-game_104678.svg'
 
 const TileViewSprite = ({
   tile,
