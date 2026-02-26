@@ -587,7 +587,7 @@ export default function MahjongGame() {
       </div>
 
       {/* PLAYER AREA (Bottom) */}
-      <div className="flex flex-col gap-2 bg-gradient-to-t from-black/50 to-black/10 p-4 md:px-6 md:pb-8 rounded-[2rem] border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.3)] relative z-10 w-full mt-auto">
+      <div className="flex flex-col gap-2 bg-linear-to-t from-black/50 to-black/10 p-4 md:px-6 md:pb-8 rounded-4xl relative z-10 w-full mt-auto">
         <div className="flex justify-between items-center mb-2">
           <span className="text-amber-500/80 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
             你的手牌 {dealer === 'player' ? '🚩 (莊)' : ''}
