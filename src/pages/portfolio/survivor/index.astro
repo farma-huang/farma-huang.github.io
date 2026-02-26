@@ -1,0 +1,40 @@
+---
+import SurvivorGame from '@components/survivor/SurvivorGame'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+
+const pageTitle = 'Survivor Clone - Farma'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="py-8 px-3 lg:px-0">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-zinc-900 mb-2">
+        ⚔️ Survivor Clone
+      </h1>
+      <p class="text-zinc-600 text-base">
+        使用 Phaser 3 與 TypeScript 打造的 Vampire Survivors 風格射擊遊戲。
+      </p>
+    </div>
+
+    <div
+      class="w-full overflow-hidden rounded-3xl ring-1 ring-zinc-200 shadow-sm bg-[#0f172a]"
+    >
+      <SurvivorGame client:only="react" />
+    </div>
+
+    <div class="mt-8 prose prose-zinc max-w-none">
+      <p>
+        以 Phaser 3 Arcade Physics 引擎建構的 2D 俯視角生存射擊遊戲。使用
+        WASD 或方向鍵控制角色在無邊界地圖上移動，角色會自動索敵並發射子彈。隨著存活時間延長，怪物生成速度與數量會逐漸增加，挑戰你的操作極限！
+      </p>
+      <h3>遊戲特色</h3>
+      <ul>
+        <li>🎮 WASD / 方向鍵 八方向移動</li>
+        <li>🎯 自動瞄準最近的敵人射擊</li>
+        <li>💀 難度隨時間遞增</li>
+        <li>🛡️ 受傷無敵幀與閃爍效果</li>
+        <li>⚡ 物件池 (Object Pooling) 效能優化</li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
