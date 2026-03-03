@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-TW" class="scroll-smooth"> <head><meta charset="utf-8"><link rel="icon" type="image/x-icon" href="/favicon/favicon.ico"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.17.1"><title>Module Federation + Styled Components 解決方案</title><link rel="stylesheet" href="/_astro/2022-01-16.D2EiN653.css">
+<style>.prose blockquote{background:#f4f4f5;border-left-color:#71717a;color:#52525b;font-style:italic;padding:1rem 1.5rem;border-radius:.5rem;quotes:none}.prose blockquote p:first-of-type:before{content:none}.prose blockquote p:last-of-type:after{content:none}.prose code:before,.prose code:after{content:none}.prose pre{border:1px solid #e4e4e7;border-radius:.5rem}.prose a{color:#52525b;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}.prose a:hover{border-bottom-color:#52525b}
+</style></head> <body class="text-zinc-900 antialiased selection:bg-zinc-200 selection:text-zinc-900"> <div class="min-h-screen flex flex-col"> <div class="hidden lg:block"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="215qk7" prefix="r2" component-url="/_astro/NavBar.BmA1_C__.js" component-export="default" renderer-url="/_astro/client.DkeD9bak.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;NavBar&quot;,&quot;value&quot;:true}" await-children><nav class="flex justify-between items-center py-2 px-4 max-w-5xl mx-auto"><div class="flex gap-6"><a href="/" class="text-lg leading-8 font-medium transition-colors hover:text-zinc-700 text-zinc-500">首頁</a><a href="/about" class="text-lg leading-8 font-medium transition-colors hover:text-zinc-700 text-zinc-500">關於我</a></div></nav><!--astro:end--></astro-island> </div> <main class="grow w-full max-w-5xl mx-auto px-0.5 lg:px-4 pb-20 mt-10 lg:mt-0 lg:pb-0">  <div class="max-w-5xl mx-auto relative px-4"> <div class="rounded-t-2xl overflow-hidden shadow-sm border border-zinc-200 bg-zinc-200"> <img src="/assets/images/2024/02/03/webpack-svgrepo-com.svg" alt="Webpack Module Federation" class="w-full h-64 object-cover aspect-video"> </div> <article class="prose prose-zinc prose-lg mx-auto bg-card border border-zinc-200 rounded-b-lg px-2 lg:px-8 py-4 shadow-sm max-w-none"> <nav class="flex items-center gap-2 text-sm text-zinc-500 mb-4 overflow-hidden"> <a href="/" class="transition-colors flex items-center gap-1 whitespace-nowrap"> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+首頁
+</a> <span class="text-zinc-400">/</span> <span class="text-zinc-500 truncate font-medium">Module Federation + Styled Components 解決方案</span> </nav> <!-- Main Content --> <header class="mb-4"> <h1 class="text-4xl font-bold text-zinc-900 mb-4 tracking-tight"> Module Federation + Styled Components 解決方案 </h1> <div class="flex items-center gap-4 text-zinc-500 text-sm font-mono"> <span>2024-02-03</span> </div> </header> <div class="editorial-content"> <h2 id="前言">前言</h2>
+<p>在用 Webpack Module Federation 把多個獨立 App 整合在一起的過程中，如果各個 App 都同時使用 styled-components，很快就會碰到兩個問題：一是多個 React 實體共存導致 hooks 報錯，二是各 App 之間的 CSS class 可能互相干擾。這篇筆記記錄了這兩個問題的成因與對應解法。</p>
+<hr>
+<h2 id="問題一多個-react-實體衝突">問題一：多個 React 實體衝突</h2>
+<p>Module Federation 允許多個 App 各自攜帶自己的依賴，但如果 Host App 和 Remote App 分別載入了自己的 <code>react</code> 實體，styled-components 依賴的 React context 就會對不上，導致 hooks 報錯（<code>Invalid hook call</code>）。</p>
+<h3 id="解法singleton-共享依賴">解法：Singleton 共享依賴</h3>
+<p>在 <code>ModuleFederationPlugin</code> 的 <code>shared</code> 設定中，把 <code>react</code>、<code>react-dom</code>、<code>styled-components</code> 都標記為 <code>singleton: true</code>，強制整個應用只使用一份實體。</p>
+<p><strong>Host App (App A) — <code>webpack.config.js</code></strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ModuleFederationPlugin</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'webpack'</span><span style="color:#E1E4E8">).container;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  plugins: [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> ModuleFederationPlugin</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">      name: </span><span style="color:#9ECBFF">'hostApp'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      remotes: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        remoteB: </span><span style="color:#9ECBFF">'remoteB@http://localhost:3001/remoteEntry.js'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      shared: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        react: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          singleton: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,        </span><span style="color:#6A737D">// 強制只用一個實體</span></span>
+<span class="line"><span style="color:#E1E4E8">          requiredVersion: </span><span style="color:#9ECBFF">'^18.0.0'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          eager: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,            </span><span style="color:#6A737D">// Host 先載入，不等待 chunk</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#9ECBFF">        'react-dom'</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          singleton: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          requiredVersion: </span><span style="color:#9ECBFF">'^18.0.0'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          eager: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#9ECBFF">        'styled-components'</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          singleton: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,        </span><span style="color:#6A737D">// styled-components 也必須 singleton</span></span>
+<span class="line"><span style="color:#E1E4E8">          requiredVersion: </span><span style="color:#9ECBFF">'^6.0.0'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          eager: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">    }),</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p><strong>Remote App (App B) — <code>webpack.config.js</code></strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">ModuleFederationPlugin</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'webpack'</span><span style="color:#E1E4E8">).container;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  plugins: [</span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> ModuleFederationPlugin</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">      name: </span><span style="color:#9ECBFF">'remoteB'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      filename: </span><span style="color:#9ECBFF">'remoteEntry.js'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      exposes: {</span></span>
+<span class="line"><span style="color:#9ECBFF">        './Button'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'./src/components/Button'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        './App'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'./src/App'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      shared: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        react: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          singleton: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          requiredVersion: </span><span style="color:#9ECBFF">'^18.0.0'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          eager: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,           </span><span style="color:#6A737D">// Remote 不設 eager，由 Host 決定</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#9ECBFF">        'react-dom'</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          singleton: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          requiredVersion: </span><span style="color:#9ECBFF">'^18.0.0'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          eager: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#9ECBFF">        'styled-components'</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          singleton: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          requiredVersion: </span><span style="color:#9ECBFF">'^6.0.0'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          eager: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">    }),</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<h3 id="eager-true-的陷阱處理"><code>eager: true</code> 的陷阱處理</h3>
+<p>Host 設定了 <code>eager: true</code> 之後，entry file 不能直接 import App，否則會報 <code>Shared module is not available for eager consumption</code> 的錯誤。解法是把 entry 改成動態 import：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// src/index.js (Host) — 不能直接 import App</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'./bootstrap'</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 改成動態 import</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// src/bootstrap.js</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ReactDOM </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-dom/client'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> App </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './App'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">ReactDOM.</span><span style="color:#B392F0">createRoot</span><span style="color:#E1E4E8">(document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'root'</span><span style="color:#E1E4E8">)).</span><span style="color:#B392F0">render</span><span style="color:#E1E4E8">(&#x3C;</span><span style="color:#79B8FF">App</span><span style="color:#E1E4E8"> />);</span></span></code></pre>
+<p>這樣 Webpack 才能在初始化共享模組之後，再去載入 App 的程式碼。</p>
+<hr>
+<h2 id="問題二css-樣式隔離">問題二：CSS 樣式隔離</h2>
+<p>即使靠 singleton 解決了 React 實體的問題，各 App 之間的樣式還是可能彼此影響。以下三種方案依隔離程度遞增排列：</p>
+<h3 id="方案一styled-components-天然隔離推薦">方案一：styled-components 天然隔離（推薦）</h3>
+<p>styled-components 會產生唯一的 hash class name（例如 <code>.sc-bdXxxt</code>），不同 App 的樣式天然不衝突。但如果擔心 hash 碰撞，可以透過 <code>babel-plugin-styled-components</code> 加上 namespace 前綴：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#6A737D">// .babelrc (App A)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "plugins"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#9ECBFF">"babel-plugin-styled-components"</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#79B8FF">      "namespace"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"appA"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "displayName"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "generateId"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">    }]</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#6A737D">// .babelrc (App B)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "plugins"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#9ECBFF">"babel-plugin-styled-components"</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#79B8FF">      "namespace"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"appB"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "displayName"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "generateId"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">    }]</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>這樣產生的 class 就會是 <code>.appA-sc-xxx</code> vs <code>.appB-sc-xxx</code>，完全不重疊。</p>
+<h3 id="方案二css-modules-編譯時隔離">方案二：CSS Modules 編譯時隔離</h3>
+<p>不用 styled-components 的話，CSS Modules 搭配自訂 <code>localIdentName</code> 也能達到相同效果：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// webpack.config.js</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  test</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF"> /</span><span style="color:#85E89D;font-weight:bold">\.</span><span style="color:#DBEDFF">module</span><span style="color:#85E89D;font-weight:bold">\.</span><span style="color:#DBEDFF">css</span><span style="color:#F97583">$</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  use</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">    'style-loader'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      loader: </span><span style="color:#9ECBFF">'css-loader'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      options: {</span></span>
+<span class="line"><span style="color:#E1E4E8">        modules: {</span></span>
+<span class="line"><span style="color:#6A737D">          // 加入 app 名稱確保唯一性</span></span>
+<span class="line"><span style="color:#E1E4E8">          localIdentName: </span><span style="color:#9ECBFF">'[name]__[local]--[hash:base64:5]'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          localIdentContext: path.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(__dirname, </span><span style="color:#9ECBFF">'src'</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="方案三shadow-dom-完全隔離">方案三：Shadow DOM 完全隔離</h3>
+<p>如果 Remote App 有全域 CSS 絕對不能外洩，可以用 Shadow DOM 包起來，並搭配 <code>StyleSheetManager</code> 讓 styled-components 把樣式注入到 Shadow DOM 內部，而不是注入到主文件的 <code>&#x3C;head></code>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#6A737D">// remote B — ShadowWrapper.jsx</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useEffect, useRef } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { createRoot } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-dom/client'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { StyleSheetManager } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'styled-components'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ShadowWrapper</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">children</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> hostRef</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useRef</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> rootRef</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> useRef</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">hostRef.current </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> rootRef.current) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> shadow</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> hostRef.current.</span><span style="color:#B392F0">attachShadow</span><span style="color:#E1E4E8">({ mode: </span><span style="color:#9ECBFF">'open'</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> mountPoint</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">createElement</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'div'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    shadow.</span><span style="color:#B392F0">appendChild</span><span style="color:#E1E4E8">(mountPoint);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    rootRef.current </span><span style="color:#F97583">=</span><span style="color:#B392F0"> createRoot</span><span style="color:#E1E4E8">(mountPoint);</span></span>
+<span class="line"><span style="color:#E1E4E8">    rootRef.current.</span><span style="color:#B392F0">render</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#79B8FF">StyleSheetManager</span><span style="color:#B392F0"> target</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{shadow}></span></span>
+<span class="line"><span style="color:#E1E4E8">        {children}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#79B8FF">StyleSheetManager</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> rootRef.current?.</span><span style="color:#B392F0">unmount</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> ref</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{hostRef} />;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ShadowWrapper;</span></span></code></pre>
+<p>在 Host App 使用時，只需要把 Remote 的組件包在 <code>ShadowWrapper</code> 裡：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#6A737D">// host A</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> RemoteButton </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'remoteB/Button'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> App</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Host App A&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">ShadowWrapper</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#79B8FF">RemoteButton</span><span style="color:#E1E4E8"> /> {</span><span style="color:#6A737D">/* 完全隔離在 Shadow DOM 內 */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#79B8FF">ShadowWrapper</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<hr>
+<h2 id="架構總結">架構總結</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│  Host App A (eager: true)                   │</span></span>
+<span class="line"><span>│  ┌─────────────────────────────────────┐    │</span></span>
+<span class="line"><span>│  │  Shared Singleton Layer             │    │</span></span>
+<span class="line"><span>│  │  • react@18                         │    │</span></span>
+<span class="line"><span>│  │  • react-dom@18                     │    │</span></span>
+<span class="line"><span>│  │  • styled-components@6              │    │</span></span>
+<span class="line"><span>│  └────────────────┬────────────────────┘    │</span></span>
+<span class="line"><span>│                   │ 共享同一實體              │</span></span>
+<span class="line"><span>│  ┌────────────────▼────────────────────┐    │</span></span>
+<span class="line"><span>│  │  Remote App B (eager: false)        │    │</span></span>
+<span class="line"><span>│  │  namespace: "appB"                  │    │</span></span>
+<span class="line"><span>│  │  → class: .appB-sc-Button-xxxx      │    │</span></span>
+<span class="line"><span>│  └─────────────────────────────────────┘    │</span></span>
+<span class="line"><span>└─────────────────────────────────────────────┘</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>問題</th><th>解法</th><th>關鍵設定</th></tr></thead><tbody><tr><td>多 React 實體</td><td>Singleton 共享</td><td><code>singleton: true</code></td></tr><tr><td>Host 載入順序</td><td>Async Bootstrap</td><td><code>eager: true</code> + dynamic import</td></tr><tr><td>styled-components 衝突</td><td>同為 Singleton</td><td><code>singleton: true</code></td></tr><tr><td>CSS class 碰撞</td><td>Namespace 隔離</td><td><code>namespace: "appX"</code></td></tr><tr><td>全域樣式洩漏</td><td>Shadow DOM</td><td><code>StyleSheetManager target</code></td></tr></tbody></table>
+<h2 id="小結">小結</h2>
+<p>Module Federation 本身非常強大，但把多個 App 結合在一起時，依賴管理和樣式隔離是兩個最容易踩到的坑。<code>singleton: true</code> 解決了依賴衝突，namespace 或 Shadow DOM 解決了樣式衝突。實際上大多數情況只需要前兩招就夠了，Shadow DOM 方案在實作上稍微複雜，適合全域樣式特別混亂、沒辦法從架構層面整理的情境。</p> </div> <hr class="my-8 border-gray-400"> <div class="flex justify-between items-center gap-4"> <a href="/posts/2024/01/19/2024-01-19" class="flex flex-col items-start gap-1 group no-underline"> <span class="text-xs font-mono text-zinc-400 group-hover:text-zinc-700 transition-colors">
+← 上一篇
+</span> <span class="text-zinc-700 font-medium group-hover:text-zinc-900 transition-colors"> 前端 Module Federation 架構介紹 </span> </a> <a href="/posts/2024/05/23/2024-05-23" class="flex flex-col items-end gap-1 group no-underline text-right"> <span class="text-xs font-mono text-zinc-400 group-hover:text-zinc-400 transition-colors">
+下一篇 →
+</span> <span class="text-zinc-400 font-medium group-hover:text-zinc-900 transition-colors"> 重訓與跑步的拉扯：認識干擾效應 (Interference Effect) </span> </a> </div> </article> </div> <script type="module">function o(){document.querySelectorAll("pre").forEach(e=>{if(e.querySelector(".copy-btn"))return;const t=document.createElement("button");if(t.className="copy-btn absolute top-2 right-2 text-xs text-zinc-400 bg-zinc-800 hover:bg-zinc-700 px-2 py-1 rounded opacity-0 transition-opacity group-hover:opacity-100",t.textContent="Copy",e.parentElement?.classList.contains("relative"))e.parentElement.classList.add("group"),e.parentElement.appendChild(t);else{const n=document.createElement("div");n.className="relative group",e.parentNode?.insertBefore(n,e),n.appendChild(e),n.appendChild(t)}t.addEventListener("click",async()=>{const n=e.querySelector("code")?.innerText;n&&(await navigator.clipboard.writeText(n),t.textContent="Copied!",setTimeout(()=>{t.textContent="Copy"},2e3))})})}o();document.addEventListener("astro:page-load",o);</script>   </main> <footer class="text-center py-6">
+© Farma Huang. All rights reserved.
+</footer> <astro-island uid="1gOWHI" prefix="r3" component-url="/_astro/MobileBottomNav.DemIbOfV.js" component-export="default" renderer-url="/_astro/client.DkeD9bak.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;MobileBottomNav&quot;,&quot;value&quot;:true}" await-children><nav class="fixed bottom-0 left-0 right-0 bg-card-bg border-t border-zinc-200 lg:hidden z-50"><div class="flex justify-around items-center px-4 py-0.5 max-w-md mx-auto"><a href="/" class="flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-lg transition-all min-w-[80px] text-zinc-500 hover:text-zinc-700"><div class="transition-transform"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true"><title>首頁</title><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path></svg></div><span class="text-xs font-medium">首頁</span></a><a href="/about" class="flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-lg transition-all min-w-[80px] text-zinc-500 hover:text-zinc-700"><div class="transition-transform"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true"><title>關於我</title><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path></svg></div><span class="text-xs font-medium">關於我</span></a></div></nav><!--astro:end--></astro-island> </div> </body></html>
